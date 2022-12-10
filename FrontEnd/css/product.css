@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Nunito:wght@300&family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+
+body{
+    margin: 0px;
+    background-color: #f2f7fa; /*#f2f7fa eaf4fa*/
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navar{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.c1{background-color: red;}
+
+.c2{height: 50px;}
+.c3{height: 20px;}
+.c7{height: 70px;}
+
+.container-box, .container-box-1, .container-review{
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.container-box-1{
+    margin-bottom: 20px;
+}
+
+.container-image{
+    width: 100%;
+    margin: auto;
+    flex-wrap: nowrap;
+}
+.image{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+
+.container-txt{
+    background-color: white;
+    padding: 0px 30px 0px 15px;
+}
+
+.smtitle{
+    font-size: 15px;
+    color: #008fee;
+    font-weight: 500;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title{
+    font-size: 35px;
+    color: #18272F;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+.txt-price{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.txt-con{
+    font-size: 14px;
+    float: left;
+    color: #274c77;
+    font-weight: bold;
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    background-color: white;
+
+}
+
+.txt-con1{
+    font-size: 16px;
+    font-weight: 500;
+    color: #18272F;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0px;
+    border: 0px;        
+}
+
+.txtbox:disabled{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #18272F;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0px;
+    border: 0px;
+    height: auto;
+    background-color: red;
+    float: left;
+}
+
+.text-area{
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: 0px;
+    text-align: center;
+    outline: none;
+}
+
+
+.text-box{
+    float: left;
+    width: 50%;
+    padding: 0px 10px;
+}
+
+#text1, #text2{
+    border-bottom: 2px solid #008fee; 
+    width: 56%;
+    padding: 5px 0px;
+    text-align: center;
+    float: right;
+    cursor: pointer;
+    color: #008fee;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+#text2{
+    color: rgb(108, 117, 125, 0.75);
+    float: left;
+    border-bottom: 2px solid #ced4da; 
+}
+
+.display-box{
+    width: 100%;
+}
+
+.description-box{
+    padding: 80px 0px 50px;
+    text-align: center;
+    color: #33373a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.Seller-box{
+    padding: 60px 0px;
+    text-align: center;
+    display: none;
+}
+
+.user-icon{
+    width: 80px;
+    height: 80px;
+    background-color: lightblue;
+    border-radius: 50px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center
+    ;
+}
+
+.info-name{
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+.info-username{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0px;
+}
+
+svg {
+    margin-bottom: 5px;
+}
+
+.rating{
+    width: 35%;
+}
+
+.rating__background {
+    fill: #FFE372;
+    stroke: red; 
+    stroke-width: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.rating__value {
+    fill: #FFB94B;
+    height: 100%;
+}
+
+.rating1{
+    width: 13%;
+}
+
+.rating__background1 {
+    fill: #FFE372;
+    stroke: red; 
+    stroke-width: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.rating__value1 {
+    fill: #FFB94B;
+    height: 100%;
+}
+
+.review-text{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(108, 117, 125, 0.8);
+    margin-bottom: 25px;
+}
+
+.follow_btn, .chat_btn{
+    width: 37%;
+    float: left;
+    margin-left: 40px;
+    outline: none;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    padding: 6px 0px;
+    background-color: white;
+    font-size: 15px;
+    transition: 0.1s;
+    box-shadow: rgba(17, 17, 26, 0.02) 0px 0px 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.follow_btn:hover{
+    background-color: #f8f9fa;
+}
+
+.chat_btn{
+    float: right;
+    margin-left: 0px;
+    margin-right: 40px;
+    background-color: #0099ff;
+    color: white;
+    border: 0px;
+}
+
+.chat_btn:hover{
+    background-color: #008fee;
+}
+
+.container-review{
+    display: flex;
+    flex-direction: column;
+    padding:24px 40px;
+}
+
+.title-review{
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.review-box{
+    width: 100%;
+    padding: 7px 0px;
+}
+
+.user-avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    float: left;
+    margin-right: 15px;
+    background-image: url("../includes/images/icons-user.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ced4da;
+    margin-top: 5px;
+}
+
+.user-name{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+.user-txt{
+    font-size: 14px;
+}
+
+
+.footer_side{
+    width: 100%;
+    margin-top: 50px;
+    background-color: #008fee;
+}
+
+@keyframes fade {
+    0%   {opacity:0.1;}
+    100% {opacity:1;}
+}
+
+@media screen and (max-width: 1700px){
+
+    .smtitle{margin: 0px;}
+
+}
+
+@media screen and (max-width:1001px){
+
+    #text1, #text2{
+        width: 80%;
+    }
+
+    .chat_btn{
+        margin-right: 30px;
+    }
+
+    .follow_btn{
+        margin-left: 30px;
+    }
+
+}
+
+@media screen and (max-width:766px){
+
+    .container-image{margin-bottom: 20px;}
+
+}

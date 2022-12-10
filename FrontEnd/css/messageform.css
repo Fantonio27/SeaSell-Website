@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+body{
+    margin: 0px;
+    background-color: #f2f7fa; /*#f2f7fa eaf4fa*/
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+*{
+    font-family: 'Poppins';
+}
+.container-box{
+    background-color: white;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    margin: 50px auto;
+}
+
+.padd{
+    padding: 50px;
+}
+
+.inbox-box{
+    width: 100%;
+    height:700px;
+    border-right: 1px solid #dee2e6;
+    padding: 0px 20px ;
+}
+.search{
+    width: 75%;
+    float: left;
+    margin-right: 5px;
+}
+.search_btn{
+    background-color: #008fee;
+    color: white;
+    width: 23%;
+    border: 1px solid #008fee;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #495057;
+    margin: 20px 0px;
+}
+
+.user-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.user{
+    width: 100%;
+    padding: 20px 10px;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    background-color: white;
+}
+
+.product-profile-inbox, .user-profile-pic{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: 0px;
+    border-radius: 10px;
+    margin: 0px 15px 0px 5px;
+    float: left;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user-profile-pic{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+}
+
+p{
+    margin: 0px;
+}
+
+.user-name, .time{
+    font-size: 15px;
+}
+
+.time{
+    float: right;
+}
+
+.prod-name{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.stat{
+    font-size: 12px;
+    color: #495057;
+}
+
+.offer{
+    color: #52b788;
+    float: left;
+    margin-right: 10px;
+}
+
+.message-box{
+    width: 100%;
+    padding: 0px 20px ;
+}
+
+.c1{
+    background-color: red;
+}
+
+.user-profile-inbox{
+    padding: 10px 10px;
+    border: 1px solid #dee2e6;
+}
+
+.prod-box{
+    width: 100%;
+    height: 80px;
+}
+
+.messages-box{
+    width: 100%;
+    height: 550px;
+    overflow: auto;
+    padding: 10px;
+}
+
+
+.input-message{
+    width: 100%;
+    height: 40px;
+}
+
+.input{
+    width: 80%;
+    margin-right: 10px;
+    float:left;
+}
+
+.send{
+    width: 18%;
+    background-color: #008fee;
+    color: white;
+    border: 1px solid #008fee;
+}
+
+.enter_btn{
+    outline: none;
+    border: 0px;
+    padding: 0px;
+    height: 91px;
+    text-align: left;
+}
+
+.modal-body p{
+    font-size: 14px;
+}
+
+.modal-body span{
+    font-size:50px;
+    color:#008fee;
+    cursor: pointer;
+}
+
+.modal-body span:hover{
+    color:red;
+}
+
+.number{
+    margin-top: 5px;
+    float: right;
+    font-size: 12px;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.btn_review{
+    background-color: #008fee;
+    color: white;
+}
+
+.btn_review:hover{
+    color: white;
+}
+
+
+@keyframes fade {
+    0%   {opacity:0.1;}
+    100% {opacity:1;}
+}

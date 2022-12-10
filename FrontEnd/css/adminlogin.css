@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    background-color: #add8e6;
+    background-image: url("includes/images/header-background/bg-login.svg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+
+.r { height: 220px;}
+
+.c1{ background-color: red;}
+
+.box{
+    background-color: white;
+    padding: 70px 50px;
+    width: 93%;
+    margin: 250px auto;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.logo{
+    display: block;
+    width: 110px;
+    margin:auto ;
+    
+}
+
+.title{
+    font-size: 32px;
+    font-weight: bolder;
+    font-family: 'Noto Sans', sans-serif;
+    color: #212529;
+    margin-bottom: 10px;
+}
+
+.usertxt, .passtxt{
+    width: 90%;
+    height: 38px;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: #212529;
+    padding:18px 20px;
+    transition: all 0.1s ease;
+    border-radius: 20px;
+    border: 1px solid rgba(173, 181, 189, 0.7);
+    margin: 7px auto;
+}
+
+.login-btn{
+    border-radius: 30px;
+    width:90%;
+    padding: 6px;
+    border: 0px;
+    background-color: #008fee;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    margin: 20px 0px 10px;
+}
+
+.login-btn:hover{
+    background-color: #0084dd;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.p2{
+    color:#212529 ;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.p2:hover{
+    color:#0084dd  ;
+}
+
+@keyframes fade {
+    0%   {opacity:0.1}
+    100% {opacity:1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

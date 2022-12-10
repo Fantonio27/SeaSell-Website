@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto:wght@300&display=swap');
+
+/*NAVBAR*/
+.c5{
+    background-color: red;
+}
+
+.c{
+    margin: auto;
+}
+
+.logo{
+    width: 200px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.nav-link, .r{
+    font-size: 18px;
+    margin: 0px 10px;
+    color:#343a40;
+    font-weight: 400;
+    font-family: 'Poppins';
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+.hover, .hover-active{
+    color: #18272F;
+    position: relative;
+    text-decoration: none;
+}
+
+.hover::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #008fee;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.hover:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.sell-btn{
+    background-color: #0099ff;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    transition: 0.3s;
+    border: 1px solid white;
+    transform: scale(1);
+    color:white;
+}
+
+.sell-btn:hover{
+    color:white;
+    border: 1px solid #008fee;
+    transform: scale(1.1);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.s{
+    background-color: white;
+    box-shadow: rgba(17, 17, 26, 0.02) 0 4px 2px -2px;
+}
+
+.navbar-toggler{
+    background-image: url('includes/images/icon/menu\ \(1\).png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height:40px;
+    border: 2px solid #008fee;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    outline: 0px;
+}
+
+.center-div{
+    margin: auto;
+}
+
+.user-profile{
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-top: 2px;
+    border-radius: 50px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.account{
+    outline: none;
+    background-color: white;
+    border: 0px;
+}
+
+/*FOOTER*/
+
+.c4{background-color: #008fee;}
+
+.footer{
+    background-color:#008fee;
+    padding: 50px 0px;
+}
+
+.f-title, .f-smtxt{
+    font-size:18px;
+    color: white;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 600;
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+
+.f-smtxt{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0px;
+    letter-spacing: 2px;
+}
+
+.f-smtxt1{
+    font-weight: 300;
+    font-size: 15px;
+    margin: 0px;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color:white;
+}
+
+
+/*Responsive*/
+
+@media screen and (max-width: 1051px){
+    .remove{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .sell-btn{
+        width: 100%;
+    }
+
+    .sell-btn:hover{
+        transform: scale(1);
+    }
+
+    .hover:before{
+        background-color: white;
+    }
+
+    .rem{
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 991px){
+    .remove{
+        display: block;
+    }
+}

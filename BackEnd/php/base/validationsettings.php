@@ -1,0 +1,6 @@
+<?php
+const USERNAME_LENGTH_MIN = 8;
+const USERNAME_LENGTH_MAX = 32;
+
+
+?>

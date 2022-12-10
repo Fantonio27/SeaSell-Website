@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@400&family=Roboto:wght@400&display=swap');
+body{
+    background-color: #f2f7fa;
+    animation-name: fade;
+    animation-duration: 1.0s;    
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.c5{
+    background-color: red;
+}
+
+.c{
+    padding: 30px;
+}
+
+.c4{
+    background-color: #e3f1fc;
+}
+
+.container-box{
+    width: 95%;
+    background-color: white;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    margin: 70px auto;
+    border-radius: 20px;
+}
+
+.box{
+    width: 100%;
+    padding: 70px;
+}
+
+.title-txt{
+    font-size: max(1.8vw, 32px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.text-pic{
+    margin: 200px 0px 0px;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #008fee;
+    text-align: center;
+}
+
+.box2{
+    width: 90%;
+}
+
+.text-pic-1{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pic-icon{
+    background-image: url("../includes/images/header-background/Mobile\ Shopping\ Illustration\(1\).jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 440px;
+    margin: 20px 0px;
+}
+
+.register-txtbox{
+    width: 95%;
+    outline: 0px;
+    border: 0px solid #ced4da;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin: 4px 0px 2px;
+    transition: 0.3s;
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+    
+}
+
+.register-txtbox:focus{
+    box-shadow: 0 0 0 3px rgba(182, 204, 254, 0.9);
+}
+
+
+.register-btn{
+    padding: 10px 40px;
+    background-color: #0099ff;
+    outline: none;
+    border: 0px;
+    color: white;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    position: relative;
+    bottom: 0px;
+    transition: 0.2s;
+    display: block;
+}
+
+.register-btn:disabled{
+    background-color: #0f8adc;
+}
+
+.register-btn:hover:enabled{
+    background-color: #008fee;
+    bottom: 3px;
+}
+
+.p1{
+    font-size: 15px;
+}
+
+.p2{
+    color: #0180d5;
+}
+
+a{
+    text-decoration: none;
+}
+
+#req1, #req2,#req3,#req4,#req5,#req6{
+    color:white;
+    margin: 0px 2px;
+    font-size: 13px;
+}
+
+.p3{
+    margin-left: 2px;
+    position: relative;
+    bottom: 3px;
+}
+
+.pass-icon{
+    background-image: url('../includes/images/icon/eye-off-outline.svg');
+    height: 23px;
+    width: 23px;
+    object-fit: contain;
+    float: right;
+    position: relative;
+    top: 33px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.logo{
+    height: 58px;
+    display: block;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.exit_btn{
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 20px;
+}
+
+/*xxl screen*/
+@media screen and (max-width: 1700px){
+
+    .box{
+        padding: 50px;
+        padding-right: 30px;
+    }
+}
+
+/*xxl screen*/
+@media screen and (max-width: 1320px){
+
+    .box{
+        padding: 50px;
+        padding-right: 30px;
+    }
+}
+
+/*lg screen*/
+@media screen and (max-width: 990px){
+
+    .box{
+        padding:100px;
+    }
+
+    .pass-icon{
+        top: 32px;
+        right: 10px;
+    }
+
+    .register-btn{
+        margin: auto;
+        width: 70%;
+    }
+
+    .register-txtbox{
+        width: 100%;
+    }
+
+    .box2{
+        display: none;
+    }
+
+    .container-box{
+        margin: 60px auto;
+    }
+}
+
+/*md screen*/
+@media screen and (max-width: 720px){
+
+    .pass-icon{
+        top: 32px;
+    }
+
+
+    .box{
+        padding:60px;
+    }
+}
+
+/*mobile screen*/
+@media screen and (max-width: 400px){
+
+    .box{
+        padding: 40px 30px;
+    }
+    
+    .title-txt{
+        text-align: center;
+        font-size: 27px;
+    }
+
+    .p1{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .logo{
+        margin: 0px auto 10px;
+    }
+}
+
+@keyframes fade {
+    0%   {opacity:0.1;}
+    100% {opacity:1;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

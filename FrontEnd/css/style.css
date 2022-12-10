@@ -1,0 +1,160 @@
+/**{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Poppins', sans-serif;
+	 background: radial-gradient(#fff,#add8e6);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
+p{
+    color: #555; 
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+	
+   
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 500px;
+}
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0;
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.btn{
+    display: inline-block;
+    background: #ba6045;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #ffc107;
+}
+.header .row{
+    margin-top: 70px;
+}
+*/
+
+body{
+    background-color: #f2f7fa;
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+.container-box, .container-box1{
+    width: 90%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.container-box img{
+    display: block;
+    margin: auto;
+    width: 60%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.container-box h1{
+    font-size: 45px;
+    font-weight: bold;
+    color:#274c77;
+    letter-spacing: 2PX;
+    font-family: Poppins;
+    margin-top: 30PX;
+}
+
+.container-box p{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Poppins;
+    color:#274c77;
+}
+
+.container-box1{
+    margin: 150px auto;
+}
+
+.container-box1 img{
+    display: block;
+    margin: auto;
+    width: 60%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.container-box1 h1{
+    font-size: 45px;
+    font-weight: bold;
+    color:#fdb833;
+    letter-spacing: 2PX;
+    font-family: Poppins;
+    margin-top: 30PX;
+}
+
+.container-box1 p{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Poppins;
+    color:#274c77;
+    margin: 15px 100px;
+}
+
+.container-box1 div{
+    background-color: #3a6ea5;
+    color: white;
+    border-radius: 20px;
+    width: 150px;
+    padding: 7px 10px;
+    font-size: 16px;
+    font-family: Poppins;
+    letter-spacing: 1px;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+@keyframes fade {
+    0%   {opacity:0.1;}
+    100% {opacity:1;}
+}

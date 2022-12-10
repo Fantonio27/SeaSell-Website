@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Domine&family=Epilogue:wght@400&family=Poppins:wght@400&display=swap');
+
+body{
+    background-color: #f2f7fa;
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.c1{
+    background-color: red;
+}
+
+.container-box{
+    width: 100%;
+    padding: 50px;
+}
+
+.form-control{
+    padding: 10px;
+    width: 100%;
+    float: left;
+    margin-right: 10px;
+}
+.search{
+    width: 100px;
+    height: 45px;
+    background-color: #008fee;
+    color: white;
+    outline: none;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.filter-box{
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.filter-box select{
+    padding: 7px 20px 7px 15px;
+    cursor: pointer;
+}
+
+.buttn{
+    background-color: #008fee;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    border: 0px;
+    padding: 7px 10px;
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.apply{
+    width: 110px;
+}
+
+p{
+    margin: 0px;
+}
+
+.product_box{
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px ;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box-product{
+    width: 269px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 12px;
+    border-radius:15px;
+    text-align: left;
+    padding: 10px 10px 30px;
+    transition: 0.1s linear;
+    justify-content: center;
+}
+
+.box-product:hover{
+    position: relative;
+    transform: scale(1.03);
+}
+
+.img-product{
+    width: 100%;
+    height:200px;
+    object-fit: cover;
+    background-color: whitesmoke;
+    display: block;
+    border-radius:10px;
+    margin: 0px auto 10px;
+    border: 1px solid #adb5bd;
+
+}
+
+.title-product{
+    font-family: 'Poppins', serif;
+    font-size:18px;
+    margin:0px 5px;
+    letter-spacing: 1px;
+}
+
+.text-product{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: rgba(100, 100, 111, 0.9);
+    letter-spacing: 0px;
+    height: 50px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    
+}
+
+.user-icon-product{
+    height: 30px;
+    width: 30px;
+    margin:0px 10px 0px 5px;
+    background-color: lightblue;
+    border-radius: 20px;
+    float: left;
+    object-fit: cover;
+    object-position: center;
+}
+
+.username-product{
+    padding: 3px;
+    float: left;
+}
+
+.view_btn{
+    font-family: 'Poppins', serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-right: 5px ;
+    float: right;
+    cursor: pointer;
+    color: black;
+}
+
+.view_btn:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+@keyframes fade {
+    0%   {opacity:0.1;}
+    100% {opacity:1;}
+}

@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@400&family=Roboto:wght@400&display=swap');
+body{
+    background-color: #f2f7fa;
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.c5{
+    background-color: red;
+}
+
+.c4{
+    background-color: #e3f1fc;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.c{
+    padding: 40px; 
+}
+.container-box{
+    width: 95%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    margin: 135px auto;
+}
+
+.text-pic{
+    text-align: center;
+    font-size: 32px;
+    color: #0077b6;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 60px;
+}
+.text-pic-1{
+    text-align: center;
+    font-size: 16px;
+    color: #2d3f4a;
+}
+
+.pic-login{
+    background-image: url("../includes/images/header-background/PngItem_95016.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80%;
+    margin-top: 25px;
+}
+
+
+.box{
+    width: 75%;
+    margin: 40px auto;
+}
+
+.logo{
+    display: block;
+    margin: auto;
+    object-fit: contain;
+    width: 130px;
+    height: 130px;
+}
+
+.user-txt-title{
+    text-align: center;
+    font-size: 34px;
+    margin: 10px 0px 40px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+
+.user-text{
+    text-align: left;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #2d3f4af2;
+    font-family: 'Nunito', sans-serif;
+}
+.user-txtbox{
+    width: 100%;
+    background-color: #f2f7fa;
+    outline: none;
+    border: 0px;
+    border-top: 2px solid rgba(0, 0, 0, 0.0);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.0);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+    padding: 10px 15px;
+    margin: 7px 0px 0px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s;
+    color: #2d3f4a;
+}
+
+.user-txtbox:focus{
+    border-bottom: 2px solid #008fee;
+}
+
+.login-btn{
+    width: 100%;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #0099ff;
+    color: white;
+    padding: 10px;
+    margin: 30px 0px 40px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    bottom: 0px;
+    position: relative;
+    transition: 0.2s;
+}
+
+.login-btn:disabled{
+    background-color: #0f8adc;
+}
+
+.login-btn:hover:enabled{
+    bottom: 3px;
+    background-color: #008fee;
+}
+
+.checkbox{
+    float: left;
+    margin:0px 10px 0px 2px;
+    position: relative;
+    top: 3px;
+}
+
+.forget-text{
+    float: right;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.p1{
+    text-align: center;
+}
+
+.p2{
+    color: #0180d5;
+}
+
+#req1 , #req2{
+    color:white; /*#ef233c*/
+    margin: 0px 4px;
+    font-size: 13px;
+}
+
+.message-box{
+    display: none;
+}
+
+.exit_btn{
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 0px;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
+
+
+/*xxl screen*/
+@media screen and (max-width: 1700px){
+
+    body{
+        background-color: lightcoral;
+    }
+
+    .box{
+        width: 85%;
+    }
+
+    .pic-login{
+        width: 95%;
+        margin: auto;
+    }
+
+    .text-pic{
+        font-size: 28px;
+    }
+
+    .text-pic-1{
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 1550px){
+
+    body{
+        background-color: lightseagreen;
+    }
+
+    .container-box{
+        width: 100%;
+    }
+    .box{
+        width: 90%;
+    }
+
+    .user-txt-title{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1399px){
+
+    .box{
+        margin: 0px auto 50px;
+        padding: 0px 20px;
+    }
+
+    .container-box{
+        margin: 145px auto;
+    }
+}
+
+@media screen and (max-width: 1199px){
+
+    .container-box{
+        width: 83%;
+    }
+
+    .c4{
+        display: none  ;
+    }
+
+    .box{
+        padding: 0px 40px;
+    }
+
+
+}
+
+@media screen and (max-width: 720px){
+
+    .box{
+        padding: 0px;
+    }
+
+    .container-box{
+        width: 90%;
+    }
+
+}
+@media screen and (max-width: 499px){
+
+    .container-box{
+        margin:60px auto;
+        width: 98%;
+    }
+
+    .user-txt-title{
+        font-size: 25px;
+    }
+
+    .box{
+        width: 100%;
+    }
+
+    .checkbox{
+        margin-right: 5px;
+    }
+}
+
+@keyframes fade {
+    0%   {opacity:0.1;}
+    100% {opacity:1;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
