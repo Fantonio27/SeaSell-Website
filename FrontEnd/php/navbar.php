@@ -41,7 +41,7 @@
                       <a class="nav-link hover" href="Fashionform.php">Fashion</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link remove hover" href="#">All Categories</a>
+                      <a class="nav-link remove hover" href="Errorpage.php">All Categories</a>
                     </li>
                   </ul>
                   <ul class="navbar-nav">

@@ -19,27 +19,27 @@
                         <div class="col-lg-3 n border border-0">
                             <p class="f-title">EXPLORE</p>
                             <p class="f-smtxt">
-                                <b><a href="../../index.html">Home<br></a>
-                                <a href="#">About<br></a>
-                                <a href="#" >Customer Feeback<br></a>
-                                <a href="../../index.html">Index</a></b>
+                                <b><a href="index.php">Home<br></a>
+                                <a href="Errorpage.php">About<br></a>
+                                <a href="Errorpage.php" >Customer Feeback<br></a>
+                                <a href="index.php">Index</a></b>
                             </p>
                         </div>
                         <div class="col-lg-3 n border border-0">
                             <p class="f-title">ABOUT</p>
                             <p class="f-smtxt">
-                                <b><a href="#">About Us<br></a>
-                                <a href="#">Personnel<br></a>
-                                <a href="#" >Products and Service<br></a>
-                                <a href="#">Terms of Service</a></b>
+                                <b><a href="Errorpage.php">About Us<br></a>
+                                <a href="Errorpage.php">Personnel<br></a>
+                                <a href="Errorpage.php" >Products and Service<br></a>
+                                <a href="Errorpage.php">Terms of Service</a></b>
                             </p>
                         </div>
                         <div class="col-lg-3 n border border-0">
                             <p class="f-title">HELP</p>
                             <p class="f-smtxt">
-                                <b><a href="#">FAQ<br></a>
-                                <a href="#">Get Started<br></a>
-                                <a href="#" >Contact Us<br></a></b>
+                                <b><a href="Errorpage.php">FAQ<br></a>
+                                <a href="Errorpage.php">Get Started<br></a>
+                                <a href="Errorpage.php" >Contact Us<br></a></b>
                             </p>
                         </div>
                         <div class="col-lg-3 n 	border border-0">
