@@ -486,36 +486,70 @@
         }
     }
 
+    function display(){
+
+        include"display_search.php";
+        include"connection.php";
+
+        $sql = "";
+        if($name != ""){
+            $sql .= " AND PRODUCT_NAME = '" . $name . "'";
+        }
+    
+        if($type != ""){
+            $sql .= " AND PRODUCT_TYPE = '" . $type . "'";
+        }
+    
+        if($condition != ""){
+            $sql .= " AND PRODUCT_CONDITION = '" . $condition . "'";
+        }
+        
+        if($price != ""){
+            if($price == 1){
+                $sql .= " AND PRODUCT_PRICE > '" . $price . "'";
+            }else if ($price == 0){
+                $sql .= " AND PRODUCT_PRICE = '" . $price . "'";
+            }
+        }
+    
+        if($deal != ""){
+            $sql .= " AND PRODUCT_DEALMETHOD = '" . $deal . "'";
+        }
+
+        filter_product($sql,$cat);
+    }
+        
+
     function filter_product($a, $b){    //FILTER IN SEARCHFORM
         include "connection.php";
-        
-        if($b == "1"){
+
+        if($b == "Bike"){
             $sql = "SELECT bike_product.PROD_ID, bike_product.PRODUCT_PRICE, bike_product.PRODUCT_NAME, product_img.IMG_NAME, user.USERNAME,user.PROFILE_PIC, bike_product.DATE
             FROM bike_product
             JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
             JOIN user ON bike_product.SELLER_ID=user.SESSION_KEY
-            WHERE product_img.IMG_INDEX = 0 ";
+            WHERE product_img.IMG_INDEX = 0 AND bike_product.STATUS = 'LISTED'";
     
-            $sql = $sql . "AND $a ORDER BY DATE DESC;";
+            $sql = $sql . "$a ORDER BY DATE DESC;";
             //echo $sql;
         }
-        else if($b == "2"){
+        else if($b == "Fashion"){
             $sql = "SELECT fashion_product.PROD_ID, fashion_product.PRODUCT_PRICE, fashion_product.PRODUCT_NAME, fashion_imgs.IMG_NAME, user.USERNAME,user.PROFILE_PIC, fashion_product.DATE
             FROM fashion_product
             JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
             JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
-            WHERE fashion_imgs.IMG_INDEX = 0 ";
+            WHERE fashion_imgs.IMG_INDEX = 0 AND fashion_product.STATUS = 'LISTED'";
     
-            $sql = $sql . "AND $a ORDER BY DATE DESC;";
+            $sql = $sql . "$a ORDER BY DATE DESC;";
             //echo $sql;
-        }else if ($b == "3"){
+        }else if ($b == "Category"){
 
             $sql = " (SELECT 
             PRODUCT_NAME, PRODUCT_PRICE, product_img.IMG_NAME, user.USERNAME,user.PROFILE_PIC, bike_product.PROD_ID, bike_product.DATE
             FROM bike_product
             JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
             JOIN user ON bike_product.SELLER_ID=user.SESSION_KEY
-            WHERE product_img.IMG_INDEX = 0 AND ". $a ."
+            WHERE product_img.IMG_INDEX = 0 AND bike_product.STATUS = 'LISTED'". $a ."
             )
             UNION
             (
@@ -524,15 +558,16 @@
             FROM fashion_product
             JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
             JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
-            WHERE fashion_imgs.IMG_INDEX = 0 AND ". $a ."
+            WHERE fashion_imgs.IMG_INDEX = 0  AND fashion_product.STATUS = 'LISTED'". $a ."
             ) ORDER BY DATE DESC;";
 
-            echo $sql;
+            //echo $sql;
         } 
 
         $result = mysqli_query($conn,$sql);
+        $i = 0;
+
         if ($result->num_rows > 0) {
-            $i = 0;
             while($row = $result->fetch_assoc()) {
                 $prod_no = $row["PROD_ID"];  
                 $prod_img = $row["IMG_NAME"];
@@ -556,7 +591,11 @@
             }
 
         }else{
-
+            echo" <div class='message' style='margin-top:90px'>
+                    <img src='includes/images/header-background/undraw_the_search_s0xf.svg' class='img_message'>
+                    <p class='message_txt'>Your search did not match any listings.</p>
+                    <p class='message_txt1'>Try another search, check if the spelling is correct or try more general keywords</p>
+                </div>";
         }
     }
 

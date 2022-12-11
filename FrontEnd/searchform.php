@@ -3,21 +3,9 @@
     $session_id = $_SESSION['id'];
     $_SESSION['seller_id'] = "";
     $_GET['id'] = 0;
-    //$search = $_SESSION['search_txt'];
 
-    $cat = $_SESSION['cat'];
-    $name = $_SESSION['name'];
-    $type = $_SESSION['type'];
-    $condition = $_SESSION['condition'];
-    $price = $_SESSION['price'];
-    $deal = $_SESSION['deal'];
-
-    /*echo $name = "SLX - Rear Derailleur - SHIMANO SHADOW RD+ - 1x12";
-    echo $type;
-    echo $deal;
-    echo $condition;
-    echo $price;
-    echo $cat;*/
+    include"includes/functions/display_search.php";
+    include"includes/functions/action.php";
     include"php/navbar.php";
 ?>
 <!DOCTYPE html>
@@ -46,16 +34,10 @@
                     <form action="<?php $_PHP_SELF?>" method="POST">
                         <!--Holder-->
                         <input id="sell" value="" hidden>
-                        <input type="text" name= "forname" id="forname" value="<?=$name?>" >
-                        <input type="text" id="fortype" value="<?=$type?>" >
-                        <input type="text" id="forcondition" value="<?=$condition?>" >
-                        <input type="text" id="forprice" value="<?=$price?>" >
-                        <input type="text" id="fordeal"value="<?=$deal?>" >
-                        <input type="text" id="forcat"value="<?=$cat?>" >
 
-                        <input type="text" class="form-control" placeholder="Search for an item" name="product_name" id="name" value="<?=$name?>"
+                        <input type="text" class="form-control" placeholder="Search for an item" name="product_name" id="name" 
                         oninput = "value_select()" >
-                        <input type="text" class= "cl" id = "cat_txt" name="prod_name" hidden>
+                        <input type="text" class= "cl"  id = "cat_txt" name="prod_name" hidden>
                         <div class="filter-box">
                             <div style="width:170px">
                                 <select name="cat" id="cat" class="form-select neg" onchange="change_value()">
@@ -74,7 +56,7 @@
 
                             <div>
                                 <select  name="condition" id="condition" class="form-select neg" onchange="value_select()">
-                                    <option value= " " selected >Condition</option>
+                                    <option value= "" selected >Condition</option>
                                     <option value="Brand new">Brand new</option>
                                     <option value="Like new">Like new</option>
                                     <option value="Lightly used">Lightly used</option>
@@ -86,7 +68,7 @@
 
                             <div>
                                 <select name="price" id="price" class="form-select neg" onchange="value_select()">
-                                    <option  value= " " selected>Price</option>
+                                    <option  value= "" selected>Price</option>
                                     <option  value= "1">For Sale</option>
                                     <option  value= "0">For Free</option>
                                 </select>
@@ -95,7 +77,7 @@
 
                             <div>
                                 <select  name="deal" name="type"id="deal" class="form-select neg" onchange="value_select()">
-                                    <option value= " "selected>Deal Option</option>
+                                    <option value= ""selected>Deal Option</option>
                                     <option value= "Meet-up">Meet-up</option>
                                     <option value= " Mailing & Delivery">Mailing & Delivery</option>
                                 </select>
@@ -108,39 +90,23 @@
                             
                         </div>
 
-                        <div class="product_box">
-                        <?php
-                            include"includes/functions/action.php";
+                        <div class="container_product_box">
+                            <div class="product_box">
+                                <?php
+                                    if(isset($_POST['Search'])){
 
-                            if(isset($_POST['Search'])){
-                                $sql = $_POST['type_txt'] . " AND " .$_POST['condition_txt'] . " AND " . $_POST['prod_name']. " AND " . 
-                                $_POST['price_txt']. " AND " . $_POST['deal_txt'];
-
-                                if($_POST['cat'] == "Bike"){
-    
-                                    filter_product($sql, '1');
-
-                                }else if($_POST['cat'] == "Fashion"){
-    
-                                    filter_product($sql, '2');
-
-                                }else if($_POST['cat'] == "Category"){
-
-                                    filter_product($sql, '3');
-                                }
-                                /*$_SESSION['cat'] = "Bike";
-                                $_SESSION['type'] = $_POST['type'];
-                                $_SESSION['condition'] = $_POST['condition'];
-                                $_SESSION['prod_name'] = $_POST['product_name'];
-                                $_SESSION['price'] = $_POST['price'];
-                                $_SESSION['deal'] = $_POST['deal'];*/
-
-                            }
-                            //echo"<script>window.location.href='searchform.php'</script>";
-
-                            //filter_product($sql, '3');
-
-                            ?>
+                                        $_SESSION['cat'] = $_POST['cat'];
+                                        $_SESSION['name'] = $_POST['product_name'];
+                                        $_SESSION['type'] = $_POST['type_txt'];
+                                        $_SESSION['condition'] = $_POST['condition'];
+                                        $_SESSION['price'] = $_POST['price'];
+                                        $_SESSION['deal'] = $_POST['deal'];
+                                    }
+                                    
+                                    display();
+                                
+                                ?>
+                            </div>
                         </div>
                     </form>
                 </div>

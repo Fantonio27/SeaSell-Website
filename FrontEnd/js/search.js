@@ -32,7 +32,7 @@ function change_value(){
 
     var array = [];
     if(cat.value == "Bike"){
-        array = ["Mountain Bikes","Road Bikes","Foldable Bikes","E-Bikes","Parts & Accessories","Children Bike","Other Bicycles"];
+        array = ["Mountain Bike","Road Bikes","Foldable Bikes","E-Bikes","Parts & Accessories","Children Bikes","Other Bicycles"];
         type.disabled = false;
     }else if(cat.value == "Fashion"){
         array = ["Bottom","Footwear","Jacket, Coat and Outwear","Tops"];
@@ -61,21 +61,22 @@ function change_value(){
 }
 
 function value_select(){
-    if (type.value != " "){
+    if (type.value != ""){
         //type_txt.value = type.value;
-        type_txt.value = "PRODUCT_TYPE = '" + type.value + "'";
+        //type_txt.value = "PRODUCT_TYPE = '" + type.value + "'";
+        type_txt.value = type.value;
     }else{
-        type_txt.value = "PRODUCT_TYPE != ' '";
+        type_txt.value = "";
     }
 
-    if (con.value != " "){
+    if (con.value != ""){
         //con_txt.value = con.value;
         con_txt.value = "PRODUCT_CONDITION = '" + con.value + "'";
     }else{
         con_txt.value = "PRODUCT_CONDITION != ' '";
     }
 
-    if (prc.value != " "){
+    if (prc.value != ""){
         if(prc.value == 1){
             //prc_txt.value = prc.value;
             prc_txt.value = "PRODUCT_PRICE > '" + prc.value + "'";
@@ -86,7 +87,7 @@ function value_select(){
         prc_txt.value = "PRODUCT_PRICE != '-1' ";
     }
 
-    if (deal.value != " "){
+    if (deal.value != ""){
         //deal_txt.value = deal.value;
         deal_txt.value = "PRODUCT_DEALMETHOD = '" + deal.value + "'";
     }else{

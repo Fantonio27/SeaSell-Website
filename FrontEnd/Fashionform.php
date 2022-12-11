@@ -57,39 +57,39 @@
                             <div class="container-box1">
                                 <div class="container-smbox">Search<br>
                                     <input type="text" class="text-box" placeholder="Search" name="name_txt">
-                                    <input type="text" id="name_txt">
+                                    <input type="text" id="name_txt" hidden>
                                 </div>
         
                                 <div class="container-smbox">Type<br>
                                     <select name="type" id="type" class="text-box cursor">
-                                        <option value=" ">Any</option>
+                                        <option value="">Any</option>
                                         <option value="Bottom">Bottom</option>
                                         <option value="Footwear">Footwear</option>
                                         <option value="Jacket, Coat and Outwear">Jacket, Coat and Outwear</option>
                                         <option value="Tops">Tops</option>
                                     </select>
-                                    <input type="text" id="type_txt">
+                                    <input type="text" id="type_txt" hidden>
                                 </div>
         
                                 <div class="container-smbox">Condition<br>
                                     <select name="condition" id="condition" class="text-box cursor" style="padding-right: 30px;">
-                                        <option value=" ">Any</option>
+                                        <option value="">Any</option>
                                         <option value="Brand new">Brand new</option>
                                         <option value="Like new">Like new</option>
                                         <option value="Lightly used">Lightly used</option>
                                         <option value="Well used">Well used</option>
                                         <option value="Heavily used">Heavily used</option>
                                     </select>
-                                    <input type="text" id="condition_txt">
+                                    <input type="text" id="condition_txt" hidden>
                                 </div>
 
                                 <div class="container-smbox">Price<br>
                                     <select name="price" id="price" class="text-box cursor">
-                                        <option value=" ">Any</option>
+                                        <option value="">Any</option>
                                         <option value="1">For Sale</option>
                                         <option value="0">For Free</option>
                                     </select>
-                                    <input type="text" id="price_txt">
+                                    <input type="text" id="price_txt" hidden>
                                 </div>
         
                                 <div class="container-smbox">Deal Option<br>
@@ -98,7 +98,7 @@
                                         <option value="Meet-up">Meet-up</option>
                                         <option value=" Mailing & Delivery">Mailing & Delivery</option>
                                     </select>
-                                    <input type="text" id="deal_txt">
+                                    <input type="text" id="deal_txt" hidden>
                                 </div>
 
                                 <div class="container-smbox"> <br>

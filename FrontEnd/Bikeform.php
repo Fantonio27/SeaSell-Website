@@ -50,18 +50,19 @@
                             </div> 
                             <div class="container-box1">
                                 <div class="container-smbox">Search<br>
-                                    <input type="text" class="text-box" placeholder="Search">
+                                    <input type="text" class="text-box" placeholder="Search" name="name_txt">
+                                    <input type="text" id="name_txt" hidden>
                                 </div>
         
                                 <div class="container-smbox">Type<br>
                                     <select name="type" id="type" class="text-box cursor">
                                         <option value="">Any</option>
-                                        <option value="">Mountain Bikes</option>
+                                        <option value="">Mountain Bike</option>
                                         <option value="">Road Bikes</option>
                                         <option value="">Foldable Bikes</option>
                                         <option value="">E-Bikes</option>
-                                        <option value="">Parts & AccessoriesE</option>
-                                        <option value="">Children Bike</option>
+                                        <option value="">Parts & Accessories</option>
+                                        <option value="">Children Bikes</option>
                                         <option value="">Other Bicycles</option>
                                     </select>
                                 </div>
@@ -95,9 +96,19 @@
                                 </div>
 
                                 <div class="container-smbox"> <br>
-                                    <button class="search-box">
-                                        <img src="includes/images/icon/search (1).svg" class="icon-search">
-                                        Search
+                                    <input class="search-box" type="submit" value="Search" name="search">
+                                    <?php
+                                        if(isset($_POST['search'])){
+                                            $_SESSION['name'] = $_POST['name_txt'];
+                                            $_SESSION['type'] =$_POST['type'];
+                                            $_SESSION['condition'] =$_POST['condition'];
+                                            $_SESSION['price'] = $_POST['price'];
+                                            $_SESSION['deal'] = $_POST['deal'];
+                                            $_SESSION['cat'] = "Bike";
+
+                                            echo"<script>window.location.href='searchform.php'</script>";
+                                        }
+                                    ?>
                                     </button>
                                 </div>    
                             </div>

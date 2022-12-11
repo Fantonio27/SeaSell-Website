@@ -295,7 +295,7 @@
                             <option >Foldable Bikes</option>
                             <option >E-Bikes</option>
                             <option >Parts & Accessories</option>
-                            <option >Children Bike</option>
+                            <option >Children Bikes</option>
                             <option >Other Bicycles</option>
                         </select>
                         <input type="text" value="<?=$product_type?>" id="type_txt" hidden>
