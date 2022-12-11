@@ -44,7 +44,7 @@
                   <!--USERNAME-->
                   <div class="user-text">&nbspUsername
                   <input type="text" id="username" class="user-txtbox" placeholder="Enter username"  
-                  oninput="valid('username')" maxlength="30" name="username"></div>
+                  oninput="valid('username');admin_login()" maxlength="30" name="username"></div>
                   <label id="req1">Username is a required field</label>
                   <!--PASSWORD-->
                   <div class="user-text">&nbspPassword

@@ -64,3 +64,8 @@ function showpass(){  //show password
   }
 }
 
+function admin_login(){   //Gotologinformadmin
+  if (usertxt.value == "Gotologinformadmin"){
+    window.location.href="../adminlogin.php";
+  }
+}

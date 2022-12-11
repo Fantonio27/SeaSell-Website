@@ -29,7 +29,7 @@
                 <form>
                     <input type="text" class="usertxt" placeholder="Username" id="username" required>
                     <input type="password" class="passtxt" placeholder="Password" id="password" required>
-                    <input type="submit" class="login-btn" value="LOGIN" id="login"><br>
+                    <div class="login-btn" id="login" onclick="enter_admin()" style="cursor:pointer; margin-left:25px">LOGIN</div><br>
                     <a href="index.php" class="p2">BACK</a>
                 </form>
                 </div>
@@ -39,3 +39,16 @@
     </div>
 </body>
 </html>
+
+<script>
+    function enter_admin(){
+        var usertxt = document.getElementById("username");
+        var passtxt = document.getElementById("password");
+
+        if (usertxt.value == "Admin01" && passtxt.value == "password"){
+            window.location.href="admin/index.php";
+        }else{
+            alert("Wrong username or password");
+        }
+    }
+</script>
