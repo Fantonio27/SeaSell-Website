@@ -1,3 +1,27 @@
+<?php
+    include "../includes/functions/connection.php";
+
+    $sql = "SELECT COUNT(USER_ID) as user FROM user";
+    $result = mysqli_query($conn,$sql);
+    $data=mysqli_fetch_assoc($result);
+
+    $user_no =  $data['user'];
+
+    $sql = "SELECT COUNT(PRODUCT_NO) as prod1 FROM fashion_product";
+    $result = mysqli_query($conn,$sql);
+    $prod1=mysqli_fetch_assoc($result);
+
+    $prod_no1 =  $prod1['prod1'];
+
+    $sql = "SELECT COUNT(PRODUCT_NO) as prod2 FROM bike_product";
+    $result = mysqli_query($conn,$sql);
+    $prod2=mysqli_fetch_assoc($result);
+
+    $prod_no2 =  $prod2['prod2'];
+
+    $prod_no = $prod_no1 + $prod_no2;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,42 +86,28 @@
             <div class="overview">
                 <div class="title">
                     <h2 class="section--title">Overview</h2>
-                    <select name="date" id="date" class="dropdown">
-                        <option value="today">Today</option>
-                        <option value="lastweek">Last Week</option>
-                        <option value="lastmonth">Last Month</option>
-                        <option value="lastyear">Last Year</option>
-                        <option value="alltime">All Time</option>
-                    </select>
+
                 </div>
                 <div class="cards">
                     <div class="card card-1">
                         <div class="card--data">
                             <div class="card--content">
                                 <h5 class="card--title">Total User</h5>
-                                <h1>0</h1>
+                                <h1><?=$user_no?></h1>
                             </div>
                             <i class="ri-user-2-line card--icon--lg"></i>
                         </div>
-                        <div class="card--stats">
-                            <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>0%</span>
-                            <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>0</span>
-                            <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>0</span>
-                        </div>
+                     
                     </div>
                     <div class="card card-2">
                         <div class="card--data">
                             <div class="card--content">
                                 <h5 class="card--title">Total Product</h5>
-                                <h1>0</h1>
+                                <h1><?=$prod_no?></h1>
                             </div>
                             <i class="ri-product-hunt-line card--icon--lg"></i>
                         </div>
-                        <div class="card--stats">
-                            <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>0%</span>
-                            <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>0</span>
-                            <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>0</span>
-                        </div>
+                      
                     </div>
                     
                 </div>
