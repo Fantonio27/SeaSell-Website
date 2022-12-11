@@ -16,51 +16,44 @@
             <i class="ri-menu-line icon icon-0 menu"></i>
             <h2>Sea<span>sell</span></h2>
         </div>
-        <div class="search--notification--profile">
-            <div class="search">
-                <input type="text" placeholder="Search Scdule..">
-                <button><i class="ri-search-2-line"></i></button>
-            </div>
-            <div class="notification--profile">
-                <div class="picon profile">
-                    <img src="images/profile.png" alt="">
-                </div>
-            </div>
-        </div>
     </section>
     <section class="main">
         <div class="sidebar">
             <ul class="sidebar--items">
                 <li>
-                    <a href="adminpanel.html" id="active--link">
+                    <a href="index.php" id="active--link">
                         <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
                         <span class="sidebar--item">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="adminproduct.html">
+                    <a href="fashion/fashionproduct.php">
                         <span class="icon icon-2"><i class="ri-product-hunt-line"></i></span>
-                        <span class="sidebar--item">Product</span>
+                        <span class="sidebar--item">Fashion</span>
                     </a>
                 </li>
                 <li>
-                    <a href="adminusers.html">
+                    <a href="bike/productbike.php">
+                        <span class="icon icon-2"><i class="ri-product-hunt-line"></i></span>
+                        <span class="sidebar--item">Bike</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="listing/listed.php">
+                        <span class="icon icon-2"><i class="ri-file-list-line"></i></span>
+                        <span class="sidebar--item">Pending Listing</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="review/review.php">
+                        <span class="icon icon-2"><i class="ri-file-list-line"></i></span>
+                        <span class="sidebar--item">Reviews</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="user\adminusers.php">
                         <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
                         <span class="sidebar--item" style="white-space: nowrap;">Users</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="adminsales.html">
-                        <span class="icon icon-5"><i class="ri-line-chart-line"></i></span>
-                        <span class="sidebar--item">Sales</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="sidebar--bottom-items">
-                <li>
-                    <a href="#">
-                        <span class="icon icon-8"><i class="ri-logout-box-r-line"></i></span>
-                        <span class="sidebar--item">Logout</span>
                     </a>
                 </li>
             </ul>
@@ -99,20 +92,6 @@
                                 <h1>0</h1>
                             </div>
                             <i class="ri-product-hunt-line card--icon--lg"></i>
-                        </div>
-                        <div class="card--stats">
-                            <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>0%</span>
-                            <span><i class="ri-arrow-up-s-fill card--icon up--arrow"></i>0</span>
-                            <span><i class="ri-arrow-down-s-fill card--icon down--arrow"></i>0</span>
-                        </div>
-                    </div>
-                    <div class="card card-3">
-                        <div class="card--data">
-                            <div class="card--content">
-                                <h5 class="card--title">Sales</h5>
-                                <h1>0</h1>
-                            </div>
-                            <i class="ri-line-chart-line card--icon--lg"></i>
                         </div>
                         <div class="card--stats">
                             <span><i class="ri-bar-chart-fill card--icon stat--icon"></i>0%</span>

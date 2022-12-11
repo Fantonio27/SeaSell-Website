@@ -467,21 +467,29 @@
         $stat ="";
         if(isset($_POST['res'])){
             $stat = "RESERVED";
+            $rev = "ACTIVE";
+
         }else if(isset($_POST['unres'])){
             $stat = "LISTED";
+            $rev = "ACTIVE";
         }
         if(isset($_POST['sold'])){
             $stat = "SOLD";
+            $rev = "ACTIVE";
         }
         if(isset($_POST['dlt'])){
             $stat = "DELISTED";
+            $rev = "DELETE";
         }
 
         if($stat != ""){
             $sql = "UPDATE $table SET STATUS = '$stat' WHERE PROD_ID = '$b'";
             if ($conn->query($sql) === TRUE) { 
-                echo"<script>alert('Update Successful');
-                window.location.href='userform.php';</script>";
+                $sql = "UPDATE review SET STATUS = '$rev' WHERE PROD_ID = '$b'";
+                if ($conn->query($sql) === TRUE) { 
+                    echo"<script>alert('Update Successful');
+                    window.location.href='userform.php';</script>";
+                }
             }
         }
     }
@@ -515,7 +523,7 @@
         if($deal != ""){
             $sql .= " AND PRODUCT_DEALMETHOD = '" . $deal . "'";
         }
-
+        
         filter_product($sql,$cat);
     }
         
@@ -599,177 +607,6 @@
         }
     }
 
-    /*function displayinbox($a){      //FOR USERS IN INBOX
-        include "connection.php";
-
-        $sql = "SELECT * FROM inbox JOIN user ON user.SESSION_KEY=inbox.BUYER_ID OR inbox.SELLER_ID ";
-        $result = mysqli_query($conn,$sql);
-            while($row = $result->fetch_assoc()) {
-                $MESSAGE_ID = $row['MESSAGE_ID'];
-                $SELLER_ID = $row['SELLER_ID'];
-                $BUYER_ID = $row['BUYER_ID'];
-                $PROD_ID = $row['PROD_ID'];
-                $SESSION_KEY = $row['SESSION_KEY'];
-                $username1 = $row['USERNAME'];
-                $profile = $row['PROFILE_PIC'];
-
-                $PROD_ID_F = $PROD_ID[0];
-
-                if($PROD_ID_F == "f"){
-                    $sql = "SELECT * FROM fashion_product JOIN fashion_imgs ON fashion_imgs.PROD_ID=fashion_imgs.PROD_ID WHERE fashion_imgs.IMG_INDEX = '0' 
-                    AND fashion_product.PROD_ID = '$PROD_ID'";
-                    
-                }else if ($PROD_ID_F == "b"){
-                    $sql = "SELECT * FROM bike_product JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID WHERE product_img.IMG_INDEX = '0'
-                    AND bike_product.PROD_ID = '$PROD_ID'";
-                }
-
-                $result = mysqli_query($conn,$sql);
-                    while($row = $result->fetch_assoc()) {
-                        $PROD_NAME = $row['PRODUCT_NAME'];
-                        $IMG = $row['IMG_NAME'];
-                    }
-                
-                if($SESSION_KEY != $a){
-                        echo " <button type='submit' class='enter_btn' name='enter'>
-                        <div class='user'>
-                            <img src='includes/images/client-product/$IMG' class='product-profile-inbox'>
-                            <div style='height:50px;'>
-                                <p class='user-name'>$username1</p>
-                                <p class='prod-name'>$PROD_NAME</p>
-                                <div class='stat'><p class='offer'>Accepted</p>You offered PHP 1000</div>
-                                <input type='text' value='$PROD_ID' name='prodnum' hidden>
-                            </div>
-                        </div>
-                    </button>";
-                }
-            }
-
-    }
-
-    function display_in_message($a,$b,$c){    //DISPLAY USER AND PRODUCT IN MESSAGE FORM
-        include "connection.php";
-
-
-        if($b == 1){
-            
-        $sql = "SELECT * FROM inbox JOIN user ON user.SESSION_KEY=inbox.BUYER_ID OR inbox.SELLER_ID WHERE inbox.PROD_ID = '$a' ";
-        $result = mysqli_query($conn,$sql);
-            while($row = $result->fetch_assoc()) {
-                $MESSAGE_ID = $row['MESSAGE_ID'];
-                $SELLER_ID = $row['SELLER_ID'];
-                $BUYER_ID = $row['BUYER_ID'];
-                $PROD_ID = $row['PROD_ID'];
-                $SESSION_KEY = $row['SESSION_KEY'];
-                $username1 = $row['USERNAME'];
-                $profile = $row['PROFILE_PIC'];
-
-                if($SESSION_KEY != $c){
-                    echo " <img src='includes/images/Profile-pic/$profile'class='user-profile-pic'>
-                        <p class='user-name'>$username1</p>";
-                }
-            }
-        
-        }else if($b == 2){
-            $PROD = $a;
-            $PROD_ID_F = $PROD[0];
-
-            if($PROD_ID_F == "f"){
-                $sql = "SELECT * FROM fashion_product JOIN fashion_imgs ON fashion_imgs.PROD_ID=fashion_imgs.PROD_ID WHERE fashion_imgs.IMG_INDEX = '0'
-                AND fashion_product.PROD_ID = '$PROD'";
-                
-            }else if ($PROD_ID_F == "b"){
-                $sql = "SELECT * FROM bike_product JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID WHERE product_img.IMG_INDEX = '0'
-                AND bike_product.PROD_ID = 'bike_id_6'";
-            }
-
-            $result = mysqli_query($conn,$sql);
-            while($row = $result->fetch_assoc()) {
-                $PROD_NAME = $row['PRODUCT_NAME'];
-                $IMG = $row['IMG_NAME'];
-                $SELLER_ID = $row['SELLER_ID'];
-                $PRICE = $row['PRODUCT_PRICE'];
-                echo $SELLER_ID;
-                echo $c;
-                if($SELLER_ID != $c){
-                    echo "<img class='product-profile-inbox' style='float:left'>
-                    <p class='prod-name'>Mags Phenominal</p>";
-                }
-            }
-        }
-    }
-
-    function display_message($a){   //MESSAGE DISPLAY
-        include "connection.php";
-
-        $sql = "SELECT * FROM inbox WHERE PROD_ID = '$a'";
-        $result = mysqli_query($conn,$sql);
-        while($row = $result->fetch_assoc()) {
-            $MESSAGE_ID = $row['MESSAGE_ID'];
-            $SELLER_ID = $row['SELLER_ID'];
-            $BUYER_ID = $row['BUYER_ID'];
-            $PROD_ID = $row['PROD_ID'];
-        }
-
-        $sql = "SELECT * FROM inbox WHERE PROD_ID = '$a'";
-        $result = mysqli_query($conn,$sql);
-        while($row = $result->fetch_assoc()) {
-            $MESSAGE_ID = $row['MESSAGE_ID'];
-            $SELLER_ID = $row['SELLER_ID'];
-            $BUYER_ID = $row['BUYER_ID'];
-            $PROD_ID = $row['PROD_ID'];
-        }
-
-        
-    }
-
-    function message(){     //INSERT MESSAGE
-        include "connection.php";
-        
-        if(isset($_POST['send'])){
-            $message = $_POST['message'];
-            $date = $_POST['date'];
-            $time = $_POST['time'];
-            $to = $_POST['to'];
-            $from = $_POST['from'];
-            $prod = $_POST['prod'];
-
-            $sql = "SELECT COUNT(PROD_ID) as prodno FROM inbox WHERE PROD_ID = '$prod';";
-            $result = mysqli_query($conn,$sql);
-            $total=mysqli_fetch_assoc($result);
-        
-            $prodcount =  $total['prodno'];
-
-            if($prodcount == "0"){
-                $sql = "INSERT INTO inbox ". "(SELLER_ID, BUYER_ID, PROD_ID) ". 
-                "VALUES('$to','$from','$prod')";
-                if ($conn->query($sql) === TRUE) { 
-                
-                }
-            }
-            
-            $sql = "SELECT MESSAGE_ID FROM inbox WHERE PROD_ID = '$prod'";
-            $result = mysqli_query($conn,$sql);
-            while($row = $result->fetch_assoc()) {
-                $MESSAGE_ID = $row['MESSAGE_ID'];
-            }
-
-            /* $sql = "SELECT COUNT(INDEX_MESSAGE) as indexno FROM messages WHERE MESSAGE_ID = '$prod_no';";
-            $result = mysqli_query($conn,$sql);
-            $total=mysqli_fetch_assoc($result);
-            
-            $indexcount =  $total['indexno'];
-
-            $sql = "INSERT INTO messages ". "( MESSAGE, DATE, TIME, TO_USER, FROM_USER, MESSAGE_ID) ". 
-            "VALUES('$message','$date','$time','$to','$from','$MESSAGE_ID')";
-    
-            if ($conn->query($sql) === TRUE) { 
-                
-            }
-        }
-        
-    }*/
-
     function review(){      //INSERT REVIEWS
         include "connection.php";
 
@@ -779,9 +616,9 @@
             $SELLER_ID = $_POST['seller'];
             $BUYER_ID = $_POST['buyer'];
             $PROD_ID = $_POST['prod'];
-                
-            $sql = "INSERT INTO review ". "(RATE, MESSAGE, SELLER_ID, BUYER_ID, PROD_ID) ". 
-            "VALUES('$RATE','$MESSAGE','$SELLER_ID','$BUYER_ID','$PROD_ID')";
+            $STATUS = "ACTIVE";   
+            $sql = "INSERT INTO review ". "(RATE, MESSAGE, SELLER_ID, BUYER_ID, PROD_ID, STATUS) ". 
+            "VALUES('$RATE','$MESSAGE','$SELLER_ID','$BUYER_ID','$PROD_ID','$STATUS')";
         
             if ($conn->query($sql) === TRUE) { 
                 $sql = "SELECT * FROM user WHERE SESSION_KEY = '$SELLER_ID'";
@@ -811,7 +648,7 @@
             $sql = "SELECT *
             FROM review
             JOIN user ON review.BUYER_ID=user.SESSION_KEY
-            WHERE review.PROD_ID = '$a' ";
+            WHERE review.PROD_ID = '$a' AND review.STATUS = 'ACTIVE'";
             $result = mysqli_query($conn,$sql);
 
             if ($result->num_rows > 0) {
@@ -869,7 +706,7 @@
             LEFT JOIN bike_product ON (review.PROD_ID = bike_product.PROD_ID)
             LEFT JOIN fashion_imgs ON (fashion_imgs.PROD_ID = fashion_product.PROD_ID)
             LEFT JOIN product_img ON (product_img.PROD_ID = bike_product.PROD_ID)
-            WHERE review.SELLER_ID = '$a'";
+            WHERE review.SELLER_ID = '$a' AND review.STATUS = 'ACTIVE'";
             $result = mysqli_query($conn,$sql); //v1ig9s2m0p
 
             if ($result->num_rows > 0) {
@@ -926,30 +763,3 @@
         }
     }
 ?>
-
-<!-- 
- $prodid_F = $prodid[0];
-
-                    if($prodid_F == "b"){
-                        $sql = "SELECT *
-                        FROM bike_product
-                        JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
-                        WHERE bike_product.PROD_ID = '$prodid' AND product_img.IMG_INDEX = '0'";
-                    }else if ($prodid_F == "f"){
-                        $sql = "SELECT *
-                        FROM fashion_product
-                        JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
-                        WHERE fashion_product.PROD_ID = '$prodid' AND fashion_imgs.IMG_INDEX = '0' ";
-                    }
-                    $result = mysqli_query($conn,$sql);
-                        while($row = $result->fetch_assoc()) { 
-                            $img = $row["IMG_NAME"];
-                            $prodname= $row["PRODUCT_NAME"];
-                            $price= $row["PRODUCT_PRICE"];
-                    }    
-
-<div class='product-review-box'>
-                        <img src='includes/images/client-product/$img' class='product-img-review'>
-                        <p>$prodname</p>
-                        <p>$price</p>
-                    </div>-->

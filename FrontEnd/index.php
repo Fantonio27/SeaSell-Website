@@ -44,7 +44,7 @@
                                     <input type="submit" name="search" class="search-btn" value="Search">
                                     <?php
                                         if(isset($_POST['search'])){
-                                            $_SESSION['search_txt'] = $_POST['search_txt'];
+                                            $_SESSION['name'] = $_POST['search_txt'];
                                             echo"<script>window.location.href='searchform.php'</script>";
                                         }
                                     ?>

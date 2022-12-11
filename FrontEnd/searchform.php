@@ -49,7 +49,7 @@
 
                             <div>
                                 <select name="type" id="type" class="form-select neg" onchange="value_select()">
-                                    <option value=" " selected>Type</option>
+                                    <option value="" selected>Type</option>
                                 </select>
                                 <input type="text"  class= "cl" id = "type_txt" name="type_txt" hidden>
                             </div>

@@ -47,7 +47,7 @@ function change_value(){
         string = string + "<option>"+ array[i]+"</option>";
 	}
 
-    type.innerHTML = "<option value=' ' selected>Type</option>" + string;	
+    type.innerHTML = "<option value='' selected>Type</option>" + string;	
 
     var fortype = document.getElementById("fortype");
 
