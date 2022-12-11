@@ -295,7 +295,8 @@ svg {
 
 .review-box{
     width: 100%;
-    padding: 7px 0px;
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
 }
 
 .user-avatar{

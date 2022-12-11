@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2022 at 03:03 AM
+-- Generation Time: Dec 11, 2022 at 01:30 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -64,11 +64,12 @@ CREATE TABLE `bike_product` (
 
 INSERT INTO `bike_product` (`PRODUCT_NO`, `PRODUCT_NAME`, `PRODUCT_PRICE`, `PRODUCT_CONDITION`, `PRODUCT_DESCRIPTION`, `PRODUCT_TYPE`, `PRODUCT_QTY`, `PRODUCT_DEALMETHOD`, `MEET_UP`, `MAILING`, `PICTURE_ID`, `SELLER_ID`, `PROD_ID`, `STATUS`, `DATE`) VALUES
 (1, 'SLX - Rear Derailleur - SHIMANO SHADOW RD+ - 1x12', 4025, 'Brand new', 'Larger 13T pulleys increase efficiency and chain management while compatibility with SHIMANOs new 12-speed cassettes boosts range', 'Parts & Accessories', 'ONE', 'Meet-up Mailing & Delivery', 'Lower Antipolo', 'Buyers preferred courrier', 'bike_picid_1', 'v1ig9s2m0p', 'bike_id_1', 'PENDING', '2021-01-27'),
-(2, 'Mountain Bike', 15000, 'Brand new', 'No issue, New release', 'Mountain Bike', 'ONE', 'Meet-up Mailing & Delivery', 'Quezon City Circle', 'Message Me in Facebook', 'bike_picid_2', 'v1ig9s2m0p', 'bike_id_2', 'PENDING', '2022-09-27'),
-(3, 'E-bike 3000', 0, 'Well used', 'Luma na pero pwede na', 'E-Bikes', 'MORE', ' Mailing & Delivery', '', 'Gogo Xpress ', 'bike_picid_3', 'v1ig9s2m0p', 'bike_id_3', 'PENDING', '2022-05-5'),
-(4, 'Road Bike', 10500, 'Lightly used', '', 'Road Bikes', 'ONE', 'Meet-up ', 'SM north Edsa', '', 'bike_picid_4', 'v1ig9s2m0p', 'bike_id_4', 'PENDING', '2022-06-18'),
+(2, 'Mountain Bike', 15000, 'Brand new', 'No issue, New release', 'Mountain Bike', 'ONE', 'Meet-up Mailing & Delivery', 'Quezon City Circle', 'Message Me in Facebook', 'bike_picid_2', 'v1ig9s2m0p', 'bike_id_2', 'LISTED', '2022-09-27'),
+(3, 'E-bike 3000', 0, 'Well used', 'Luma na pero pwede na', 'E-Bikes', 'MORE', ' Mailing & Delivery', '', 'Gogo Xpress ', 'bike_picid_3', 'v1ig9s2m0p', 'bike_id_3', 'LISTED', '2022-05-5'),
+(4, 'Road Bike', 10500, 'Lightly used', '', 'Road Bikes', 'ONE', 'Meet-up ', 'SM north Edsa', '', 'bike_picid_4', 'v1ig9s2m0p', 'bike_id_4', 'RESERVED', '2022-06-18'),
 (5, 'Specialized mtb 26ers', 101, 'Well used', 'Di n nagagamit', 'Other Bicycles', 'ONE', 'Meet-up ', 'San Jose del Monte', '', 'bike_picid_5', 'v1ig9s2m0p', 'bike_id_5', 'PENDING', '2022-12-05'),
-(6, 'Bike Grips', 17000, 'Lightly used', '', 'Other Bicycles', 'ONE', 'Meet-up Mailing & Delivery', 'Fisher Mall', 'Lala Move', 'bike_picid_6', '5j5pfjyc4k', 'bike_id_6', 'RESERVED', '2022-12-7');
+(6, 'Bike Grips', 17000, 'Lightly used', '', 'Other Bicycles', 'ONE', 'Meet-up Mailing & Delivery', 'Fisher Mall', 'Lala Move', 'bike_picid_6', '5j5pfjyc4k', 'bike_id_6', 'LISTED', '2022-12-7'),
+(7, 'Ghost rider', 20000, 'Brand new', '', 'Road Bikes', 'ONE', 'Meet-up ', 'ssdvsdvsv', '', 'bike_picid_7', 'po6d7c15ofg', 'bike_id_7', 'LISTED', '2022-12-11');
 
 -- --------------------------------------------------------
 
@@ -125,9 +126,9 @@ CREATE TABLE `fashion_product` (
 --
 
 INSERT INTO `fashion_product` (`PRODUCT_NO`, `PRODUCT_NAME`, `PRODUCT_PRICE`, `PRODUCT_CONDITION`, `PRODUCT_DESCRIPTION`, `PRODUCT_TYPE`, `PRODUCT_GENDER`, `PRODUCT_SIZE`, `PRODUCT_QTY`, `PRODUCT_DEALMETHOD`, `MEET_UP`, `MAILING`, `PICTURE_ID`, `SELLER_ID`, `PROD_ID`, `STATUS`, `DATE`) VALUES
-(1, 'PRE-OWNED JACKET WINDBREAKER Vintage Helly Hanse', 3200, 'Like new', 'Rare, Good as new, need wash unisex', 'Jacket, Coat and Outwear', 'Female', 'M / EU 38 / UK 10 / US 6', 'ONE', ' Mailing & Delivery', '', 'J&T or buyers preferred courier (The buyer is responsible for the shipping price, which paid in cash upon delivery.)', 'fashion_picid_1', 'v1ig9s2m0p', 'fashion_id_1', 'PENDING', '2022-08-27'),
+(1, 'PRE-OWNED JACKET WINDBREAKER Vintage Helly Hanse', 3200, 'Like new', 'Rare, Good as new, need wash unisex', 'Jacket, Coat and Outwear', 'Female', 'M / EU 38 / UK 10 / US 6', 'ONE', ' Mailing & Delivery', '', 'J&T or buyers preferred courier (The buyer is responsible for the shipping price, which paid in cash upon delivery.)', 'fashion_picid_1', 'v1ig9s2m0p', 'fashion_id_1', 'RESERVED', '2022-08-27'),
 (2, 'H&M Pants', 600, 'Brand new', 'A-line distressed denim skirt', 'Bottom', 'Female', 'M / EU 38 / UK 10 / US 6', 'ONE', 'Meet-up ', 'Vista Mall Taguig', '', 'fashion_picid_2', 'v1ig9s2m0p', 'fashion_id_2', 'PENDING', '2022-12-1'),
-(3, 'Jordan 1 high GS “Lost and found”', 15000, 'Well used', 'Jordan 1 high GS “Lost and found”, BRAND NEW, size 6Y or 7.5wmns, ₱ 15000', 'Footwear', 'Male', 'EU 42 / UK 8 / US 9', 'MORE', 'Meet-up Mailing & Delivery', 'SM Bacoor Bus Terminal', 'Lalamove / Grab', 'fashion_picid_3', 'v1ig9s2m0p', 'fashion_id_3', 'PENDING', '2022-10-12');
+(3, 'Jordan 1 high GS “Lost and found”', 15000, 'Well used', 'Jordan 1 high GS “Lost and found”, BRAND NEW, size 6Y or 7.5wmns, ₱ 15000', 'Footwear', 'Male', 'EU 42 / UK 8 / US 9', 'MORE', 'Meet-up Mailing & Delivery', 'SM Bacoor Bus Terminal', 'Lalamove / Grab', 'fashion_picid_3', 'v1ig9s2m0p', 'fashion_id_3', 'RESERVED', '2022-10-12');
 
 -- --------------------------------------------------------
 
@@ -205,7 +206,10 @@ INSERT INTO `product_img` (`IMG_ID`, `IMG_INDEX`, `IMG_NAME`, `PICTURE_ID`, `PRO
 (27, '2', 'Specialized mtb 26ers_2.jpg', 'bike_picid_5', 'bike_id_5'),
 (28, '0', 'Mountain Bike_0.jpg', 'bike_picid_2', 'bike_id_2'),
 (30, '0', 'Bike Grip_0.jpg', 'bike_picid_6', 'bike_id_6'),
-(31, '1', 'Bike Grip_1.jpg', 'bike_picid_6', 'bike_id_6');
+(31, '1', 'Bike Grip_1.jpg', 'bike_picid_6', 'bike_id_6'),
+(32, '0', 'Ghost rider_0.jpg', 'bike_picid_7', 'bike_id_7'),
+(33, '1', 'Ghost rider_1.jpg', 'bike_picid_7', 'bike_id_7'),
+(34, '2', 'Ghost rider_2.jpeg', 'bike_picid_7', 'bike_id_7');
 
 -- --------------------------------------------------------
 
@@ -219,18 +223,21 @@ CREATE TABLE `review` (
   `MESSAGE` varchar(200) NOT NULL,
   `SELLER_ID` varchar(200) NOT NULL,
   `BUYER_ID` varchar(200) NOT NULL,
-  `PROD_ID` varchar(200) NOT NULL
+  `PROD_ID` varchar(200) NOT NULL,
+  `STATUS` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`REVIEW_ID`, `RATE`, `MESSAGE`, `SELLER_ID`, `BUYER_ID`, `PROD_ID`) VALUES
-(1, '4', 'Good Item', 'v1ig9s2m0p', '5j5pfjyc4k', 'fashion_id_1'),
-(2, '5', 'Angas', 'v1ig9s2m0p', '5j5pfjyc4k', 'fashion_id_3'),
-(3, '4', 'Nice', 'v1ig9s2m0p', '5j5pfjyc4k', 'fashion_id_1'),
-(4, '4', 'Angas walo gulong', 'v1ig9s2m0p', '5j5pfjyc4k', 'bike_id_2');
+INSERT INTO `review` (`REVIEW_ID`, `RATE`, `MESSAGE`, `SELLER_ID`, `BUYER_ID`, `PROD_ID`, `STATUS`) VALUES
+(1, '4', 'Good Item', 'v1ig9s2m0p', '5j5pfjyc4k', 'fashion_id_1', ''),
+(2, '5', 'Angas', 'v1ig9s2m0p', '5j5pfjyc4k', 'fashion_id_3', ''),
+(3, '4', 'Nice', 'v1ig9s2m0p', '5j5pfjyc4k', 'fashion_id_1', ''),
+(4, '4', 'Angas walo gulong', 'v1ig9s2m0p', '5j5pfjyc4k', 'bike_id_2', ''),
+(5, '4', 'ganda ', '5j5pfjyc4k', 'po6d7c15ofg', 'bike_id_6', ''),
+(6, '2', 'GALING WALO GULONG', 'v1ig9s2m0p', 'po6d7c15ofg', 'bike_id_4', '');
 
 -- --------------------------------------------------------
 
@@ -262,8 +269,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`USER_ID`, `USERNAME`, `PASSWORD`, `FIRSTNAME`, `LASTNAME`, `BIO`, `REGION`, `CITY`, `EMAIL_ADDRESS`, `MOBILE_NUMBER`, `GENDER`, `BIRTHDAY`, `PROFILE_PIC`, `SESSION_KEY`, `RATING`, `JOINED_DATE`) VALUES
-(1, 'Fantonio01', 'antonio27', 'Francis Louie', 'Antonio', '', 'Metro Manila', 'Quezon City', 'francis.antonio01@yahoo.com', '0933323331', 'Male', '2002-09-27', 'Fantonio01.jpg', 'v1ig9s2m0p', '4.06', '2022-09-27'),
-(2, 'Orbiso02', 'robinjames', 'Robin', 'James', '', 'Metro Manila', 'Caloocan City', 'orbiso02@yahoo.com', '091234567892', '', '', 'Orbiso02.jpg', '5j5pfjyc4k', '', '2022-12-07');
+(1, 'Fantonio01', 'password', 'Francis', 'Antonio', '', 'Metro Manila', 'Quezon City', 'francis.antonio01@yahoo.com', '09335322325', 'Female', '2002-09-27', 'Fantonio01.jpg', 'v1ig9s2m0p', '3.03', '2022-09-27'),
+(2, 'Orbiso02', 'robinjames', 'Robin', 'James', '', 'Metro Manila', 'Caloocan City', 'orbiso02@yahoo.com', '091234567892', '', '', 'Orbiso02.jpg', '5j5pfjyc4k', '', '2022-12-07'),
+(3, 'Braca03', 'password', 'Account', '359', '', 'Metro Manila', 'Mandaluyong City', 'Braca03@gmail.com', '09222222222', 'Male', '', 'Braca03.jpg', 'po6d7c15ofg', '', '2022-12-11');
 
 --
 -- Indexes for dumped tables
@@ -337,7 +345,7 @@ ALTER TABLE `admin_account`
 -- AUTO_INCREMENT for table `bike_product`
 --
 ALTER TABLE `bike_product`
-  MODIFY `PRODUCT_NO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `PRODUCT_NO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `fashion_imgs`
@@ -367,19 +375,19 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `product_img`
 --
 ALTER TABLE `product_img`
-  MODIFY `IMG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `IMG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `REVIEW_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `REVIEW_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

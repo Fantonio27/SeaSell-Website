@@ -91,8 +91,8 @@
                             include "includes/functions/connection.php";
 
                             if($sell_id == ""){
-                              $bike = "AND bike_product.STATUS = 'LISTED' OR bike_product.STATUS = 'RESERVED' ";
-                              $fashion = "AND fashion_product.STATUS = 'LISTED'OR fashion_product.STATUS = 'RESERVED' ";
+                              $bike = "AND (bike_product.STATUS = 'LISTED' OR bike_product.STATUS = 'RESERVED') ";
+                              $fashion = "AND (fashion_product.STATUS = 'LISTED' OR fashion_product.STATUS = 'RESERVED') ";
                             }
                             else if($sell_id != $key || $key == ""){
                               $bike = "AND bike_product.STATUS = 'LISTED' ";
@@ -118,7 +118,6 @@
                             JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
                             WHERE fashion_product.SELLER_ID = '$session_id' AND fashion_imgs.IMG_INDEX = 0 " . $fashion ."
                             );";
-
                           
                             $result = mysqli_query($conn,$sql);
 

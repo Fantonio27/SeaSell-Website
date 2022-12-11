@@ -155,7 +155,7 @@
                           <rect width="<?=$rate_perc?>%" class='rating__value' clip-path="url(#stars)"></rect>
                         </svg><br>
 
-                        <p class="review-text"><?=$rate_round?></p>
+                        <p class="review-text"><?=$rate_round_txt?></p>
                         <input type="text" value="<?=$seller_id?>" name="seller_id" hidden>
                         <input type="submit" class="follow_btn" value="View Profile" id="view" name="view">
                         <input type="submit" class="chat_btn" value="Chat" name="chat" id="chat1">

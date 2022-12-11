@@ -100,8 +100,9 @@
             }
 
             if($rates != ""){
-                $rate_round = round($rates,1) . " rates";
-                $rate_perc =  0 * 20;
+                $rate_round = round($rates,1) ;
+                $rate_round_txt = round($rates,1) . " rates";
+                $rate_perc =  $rate_round * 20;
             }else{
                 $rate_round = "No ratings yet";
                 $rate_perc =  0 * 20;
@@ -162,8 +163,9 @@
                     $product_status = "Unreserved";
                 }
                 if($rates != ""){
-                    $rate_round = round($rates,1) . " rates";
-                    $rate_perc =  0 * 20;
+                    $rate_round = round($rates,1) ;
+                    $rate_round_txt = round($rates,1) . " rates";
+                    $rate_perc =  $rate_round * 20;
                 }else{
                     $rate_round = "No ratings yet";
                     $rate_perc =  0 * 20;
