@@ -33,8 +33,8 @@
             <div class="container-box">
                 <form action="<?php $_PHP_SELF?>" method="POST" >
                     <div class="con-top">
-                        <button type="button" class=" res_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-                        Mark as Reserved
+                        <button type="button" class=" res_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" onclick="change_reserve()">
+                        <span id="reserved" >Mark as <?=$product_status?></span>
                         </button>
                         <button type="button" class=" sold_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
                         Mark as Sold
@@ -48,15 +48,17 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Mark your listing as Reserved?</h1>
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Mark your listing as <?=$product_status?>?</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    When reserved, this item will not be visible in the marketplace and you will not receive any offers.
+                                    <p id="p1">When reserved, this item will not be visible in the marketplace and you will not receive any offers.</p>
+                                    <p id="p2">When unreserved, your item will be visible in the marketplace. Good luck!</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                    <input type="submit"  class="btn btn-primary" value="Mark as Reserved" name="res">
+                                    <input type="submit"  class="btn btn-primary" value="Mark as Reserved" name="res" id="res">
+                                    <input type="submit"  class="btn btn-primary" value="Mark as Unreserved" name="unres" id="unres">
                                 </div>
                             </div>
                         </div>
@@ -112,7 +114,8 @@
                     </select>
                 </div>
                 <input type="text" id="cat" value="<?= $cat?>" hidden>
-
+                <input id="sell" value="" hidden>
+                
                 <div class="container-fashion" id="con-1"  style="display:none">
                     <div class="group">
                         <form action="<?php $_PHP_SELF?>" method="POST" enctype="multipart/form-data">

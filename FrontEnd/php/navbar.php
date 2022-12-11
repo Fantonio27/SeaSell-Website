@@ -80,7 +80,6 @@
 
 <script>
   <?php
-    include"../js/navbar.js";
+    //include"../js/navbar.js";
   ?>
-
 </script>

@@ -38,6 +38,8 @@
                     <option >Fashion</option>
                   </select>
                 </div>
+                
+                <input id="sell" value="" hidden>
 
                 <div class="container-fashion" id="con-1"  style="display:none">
                   <div class="group">

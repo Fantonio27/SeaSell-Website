@@ -24,6 +24,10 @@ p { margin:0 }
     padding: 50px;
 }
 
+.container-box{
+    height: 800px;
+}
+
 .container-smbox{
     text-align: center;
     padding: 40px 20px;
@@ -131,6 +135,7 @@ hr{
     background-color: #f8f9fa;
 }
 
+
 .container-productbox{
     display: flex;
     justify-content: flex-start;
@@ -205,6 +210,18 @@ hr{
     border-radius: 7px;
     cursor: pointer;
 }
+
+.userprofile , .listing, .review{
+    overflow: auto;
+    height: 620px;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.listing, .review{
+    padding-right: 0px;
+}
+
 
 .edit_btn_product:hover{
     background-color: #008fee;
@@ -346,10 +363,9 @@ hr{
 
 .review-box{
     width: 100%;
-    padding: 7px 15px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-bottom: 0px;
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid #dee2e6;
     text-align: left;
 }
 
@@ -394,6 +410,30 @@ hr{
     height: 100%;
 }
 
+.product-review-box{
+    margin: 10px 0px 10px 30px;
+    width: 80%;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.product-img-review{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 15px;
+}
+
+.p{
+    margin-top: 4px;
+    font-size: 14px; 
+}
 
 @keyframes fade {
     0%   {opacity:0.1;}

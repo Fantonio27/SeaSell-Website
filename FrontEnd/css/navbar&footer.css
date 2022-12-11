@@ -144,6 +144,32 @@
     margin-top: 5px;
 }
 
+.message{
+    width: 100%;
+    padding: 30px;
+    margin-top: 100px;
+}
+
+.img_message{
+    margin: auto;
+    object-fit: contain;
+    width: 230px;
+    height: 200px;
+    display: block;
+}
+
+.message_txt{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message_txt1{
+    font-size: 14px;
+    text-align: center;
+    width:80%;
+    margin: auto;
+}
 a{
     text-decoration: none;
     color: white;

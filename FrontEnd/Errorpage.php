@@ -27,6 +27,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="container-box">
+                    <input id="sell" value="" hidden>
                     <img src="includes/images/header-background/undraw_page_not_found_re_e9o6.svg">
                     <h1>PAGE NOT FOUND</h1>
                     <p>The page you are looking for was moved, removed, renamed, or might never existed.</p>

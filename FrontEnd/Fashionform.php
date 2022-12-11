@@ -32,6 +32,7 @@
 <body>
     <div class="container-fluid">
         <form action="<?php $_PHP_SELF?>" method="POST">
+            <input id="sell" value="" hidden>
             <div class="row c2"></div>
             <div class="row">
                 <div class="col-xxl-1"></div>
@@ -140,8 +141,8 @@
             </div>
 
             <div class="row">
-                <div class="col-xxl-2"></div>
-                <div class="col-xxl-8">
+                <div class="col-xxl-1"></div>
+                <div class="col-xxl-10">
                     <div class="container-productbox">
                         <?php
                             include"includes/functions/action.php";
@@ -166,7 +167,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-xxl-2"></div>
+                <div class="col-xxl-1"></div>
             </div>
 
             <div class="row c3"></div>

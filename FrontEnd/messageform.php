@@ -28,6 +28,7 @@
 <body >
     <div class="container-fluid">
         <form action="<?php $_PHP_SELF?>" method="POST">
+            <input id="sell" value="" hidden>
             <input type="text" value="<?= $session_id?>" name="buyer"> <!--USER/BUYER/SELLER-->
             <input type="text" value="<?=$seller?>" name="seller"><!--EXAMPLE SELLER ID-->
             <input type="text" value="<?=$prod?>" name="prod"><!--EXAMPLE PROD_ID-->

@@ -158,7 +158,7 @@ body{
 
 /*Product*/
 
-.box-category{
+.box-category, .box-product-display{
     margin-top: 20px;
     display: flex;
     justify-content: flex-start;
@@ -167,8 +167,16 @@ body{
     flex-direction: row;
 }
 
+.box-product-display{
+    max-height: 1000px;
+    overflow: auto;
+    width: 100%;
+    padding: 10px 0px;
+    
+}
+
 .box-product{
-    width: 273px;
+    width: 269px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 12px;
     border-radius:15px;

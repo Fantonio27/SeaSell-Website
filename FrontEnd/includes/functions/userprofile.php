@@ -26,9 +26,16 @@
             $profile_pic_u= $row['PROFILE_PIC'];
             $key_u= $row['SESSION_KEY'];
             $username1_u= $row['USERNAME'];
-            $rate_u= $row['RATING'];
-            $rate_u = round($rate_u,1);
-            $rate_perc = $rate_u * 20;
+            $rates= $row['RATING'];
+            if($rates != ""){
+                $rate_u = round($rates,1);
+                $rate_perc =  $rate_u * 20;
+            }else{
+                $rate_u = "No ratings yet";
+                $rate_perc =  0 * 20;
+            }
+            //$rate_u = round($rate_u,1);
+            //$rate_perc = $rate_u * 20;
 
         }
     }else{

@@ -36,8 +36,8 @@
             }
                         
             $conn->close();
-                }
         }
+    }
 
     function register(){    //REGISTER
         include "connection.php";
@@ -99,7 +99,7 @@
         FROM bike_product
         JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
         JOIN user ON bike_product.SELLER_ID=user.SESSION_KEY
-        WHERE product_img.IMG_INDEX = 0
+        WHERE product_img.IMG_INDEX = 0 AND bike_product.STATUS = 'LISTED' 
         )
         UNION
         (
@@ -108,7 +108,7 @@
         FROM fashion_product
         JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
         JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
-        WHERE fashion_imgs.IMG_INDEX = 0
+        WHERE fashion_imgs.IMG_INDEX = 0 AND fashion_product.STATUS = 'LISTED' 
         )". $o . ";";
 
         $result = mysqli_query($conn,$sql);
@@ -241,7 +241,7 @@
         FROM bike_product
         JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
         JOIN user ON bike_product.SELLER_ID=user.SESSION_KEY
-        WHERE product_img.IMG_INDEX = 0 ";
+        WHERE product_img.IMG_INDEX = 0 AND bike_product.STATUS = 'LISTED'";
 
         if($a == 1){
             $sql = $sql . "ORDER BY RAND() LIMIT 10;";
@@ -290,7 +290,7 @@
         FROM fashion_product
         JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
         JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
-        WHERE fashion_imgs.IMG_INDEX = 0 ";
+        WHERE fashion_imgs.IMG_INDEX = 0 AND fashion_product.STATUS = 'LISTED'";
 
         if($a == 1){
             $sql = $sql . "ORDER BY RAND() LIMIT 10;";
@@ -449,7 +449,7 @@
             $_SESSION['seller_id'] = $_POST['seller_id'];
         }
 
-        if(isset($_POST['chat'])){
+        if(isset($_POST['chat'])){  
             echo"<script>window.location.href='messageform.php';</script>";
             $_SESSION['seller_id'] = $_POST['seller_id'];
             $_SESSION['prodno'] = $_POST['id'];
@@ -467,12 +467,14 @@
         $stat ="";
         if(isset($_POST['res'])){
             $stat = "RESERVED";
+        }else if(isset($_POST['unres'])){
+            $stat = "LISTED";
         }
         if(isset($_POST['sold'])){
             $stat = "SOLD";
         }
         if(isset($_POST['dlt'])){
-            $stat = "DELETE";
+            $stat = "DELISTED";
         }
 
         if($stat != ""){
@@ -763,7 +765,7 @@
         }
     }
 
-    function display_review($a, $b){     //DISPLAY REVIEW IN EACH PRODUCT
+    function display_review($a, $b, $c){     //DISPLAY REVIEW IN EACH PRODUCT
         include "connection.php";
 
         if($b == 1){
@@ -776,6 +778,7 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) { 
                     $rate = $row["RATE"];
+                    $seller = $row["SELLER_ID"];
                     $review= $row["MESSAGE"];
                     $profile= $row["PROFILE_PIC"];
                     $username = $row["USERNAME"];
@@ -809,13 +812,26 @@
                     </div>
                 </div>";
                 }
+            }else{
+                echo" <div class='message' style='margin-top:50px'>
+                        <img src='includes/images/header-background/undraw_reviews_lp8w.svg' class='img_message'>
+                        <p class='message_txt'>@$c has no reviews yet.</p>
+                        <p class='message_txt1'>Reviews are given when a buyer or seller completes a deal. Chat with @$c to find out more!</p>
+                    </div>";
             }
+
         }else if($b == 2){
-            $sql = "SELECT *
+            $sql = "SELECT review.RATE, review.MESSAGE, user.PROFILE_PIC, user.USERNAME, IF(fashion_product.PROD_ID = review.PROD_ID,fashion_product.PROD_ID,bike_product.PROD_ID ) AS PROD_ID,
+            IF(fashion_product.PROD_ID = review.PROD_ID,fashion_product.PRODUCT_NAME,bike_product.PRODUCT_NAME ) AS PRODUCT_NAME ,IF(fashion_product.PROD_ID = review.PROD_ID,fashion_product.PRODUCT_PRICE,bike_product.PRODUCT_PRICE ) AS PRODUCT_PRICE,
+            IF(fashion_product.PROD_ID = fashion_imgs.PROD_ID,fashion_imgs.IMG_NAME,product_img.IMG_NAME ) AS IMG_NAME
             FROM review
-            JOIN user ON review.BUYER_ID=user.SESSION_KEY
-            WHERE review.SELLER_ID = '$a' ";
-            $result = mysqli_query($conn,$sql);
+            LEFT JOIN user ON review.BUYER_ID=user.SESSION_KEY
+            LEFT JOIN fashion_product ON (review.PROD_ID = fashion_product.PROD_ID)
+            LEFT JOIN bike_product ON (review.PROD_ID = bike_product.PROD_ID)
+            LEFT JOIN fashion_imgs ON (fashion_imgs.PROD_ID = fashion_product.PROD_ID)
+            LEFT JOIN product_img ON (product_img.PROD_ID = bike_product.PROD_ID)
+            WHERE review.SELLER_ID = '$a'";
+            $result = mysqli_query($conn,$sql); //v1ig9s2m0p
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) { 
@@ -825,58 +841,48 @@
                     $username = $row["USERNAME"];
                     $prodid = $row["PROD_ID"];
                     $rate = $rate * 20;
-
-                    $prodid_F = $prodid[0];
-
-                    if($prodid_F == "b"){
-                        $sql = "SELECT *
-                        FROM bike_product
-                        JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
-                        WHERE bike_product.PROD_ID = '$prodid' AND product_img.IMG_INDEX = '0'";
-                    }else if ($prodid_F == "f"){
-                        $sql = "SELECT *
-                        FROM fashion_product
-                        JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
-                        WHERE fashion_product.PROD_ID = '$prodid' AND fashion_imgs.IMG_INDEX = '0' ";
-                    }
-                    $result = mysqli_query($conn,$sql);
-                        while($row = $result->fetch_assoc()) { 
-                            $img = $row["IMG_NAME"];
-                            $prodname= $row["PRODUCT_NAME"];
-                            $price= $row["PRODUCT_PRICE"];
-                      
+                    $img = $row["IMG_NAME"];
+                    $prodname= $row["PRODUCT_NAME"];
+                    $price= $row["PRODUCT_PRICE"];
 
                     echo " <div class='review-box'>
                                 <img src='includes/images/Profile-pic/$profile' class='user-avatar'>
                                 <div class='user-name'>$username<br>
                                     <svg viewBox='0 0 1000 200' class='rating1'>
-                                    <defs> 
-                                        <polygon id='star1' points='100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 '/>
-                                
-                                        <clipPath id='stars1'>
-                                            <use xlink:href='#star1'/>
-                                            <use xlink:href='#star1' x='22%'/>
-                                            <use xlink:href='#star1' x='42%'/>
-                                            <use xlink:href='#star1' x='62%'/>
-                                            <use xlink:href='#star1' x='82%'/>
-                                        </clipPath>  
+                                        <defs> 
+                                            <polygon id='star1' points='100,0 131,66 200,76 150,128 162,200 100,166 38,200 50,128 0,76 69,66 '/>
+                                    
+                                            <clipPath id='stars1'>
+                                                <use xlink:href='#star1'/>
+                                                <use xlink:href='#star1' x='22%'/>
+                                                <use xlink:href='#star1' x='42%'/>
+                                                <use xlink:href='#star1' x='62%'/>
+                                                <use xlink:href='#star1' x='82%'/>
+                                            </clipPath>  
 
-                                    </defs>
-                                    <rect class='rating__background1' clip-path='url(#stars1)'></rect>
-                                    <!--width yung pang adjust ng rating-->
-                                    <rect width='$rate%' class='rating__value1' clip-path='url(#stars1)'></rect>
+                                        </defs>
+                                        <rect class='rating__background1' clip-path='url(#stars1)'></rect>
+                                        <!--width yung pang adjust ng rating-->
+                                        <rect width='$rate%' class='rating__value1' clip-path='url(#stars1)'></rect>
                                     </svg><br>
                                 </div>
-                                <div style='width: 60px; height:40px; float: left;'></div>
+                                <div style='width: 60px; height:50px; float: left;'></div>
                                 <div class='user-txt-review'>$review</div>
                                 <div class='product-review-box'>
-                        <img src='includes/images/client-product/$img' class='product-img-review'>
-                        <p>$prodname</p>
-                        <p>$price</p>
-                    </div>
+                                    <img src='includes/images/client-product/$img' class='product-img-review'>
+                                    <div class='p'><p>$prodname </p>
+                                    <p>Php $price</p>
+                                    </div>
+                                </div>
                             </div>";
-                        }
                 }
+            }else
+            {
+                echo" <div class='message' style='margin-top:80px'>
+                <img src='includes/images/header-background/undraw_reviews_lp8w.svg' class='img_message'>
+                <p class='message_txt'>@$c has no reviews yet.</p>
+                <p class='message_txt1'>Reviews are given when a buyer or seller completes a deal. Chat with @$c to find out more!</p>
+            </div>";
             }
         }
     }

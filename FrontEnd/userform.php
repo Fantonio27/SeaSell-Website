@@ -35,6 +35,8 @@
   <form action="<?php $_PHP_SELF?>" method="POST" enctype="multipart/form-data" >
     <input type="text" id="user_id" value="<?=$key?>" name="id" hidden>
     <input type="text" value="<?=$sell_id?>" id="seller" hidden>
+
+    <input id="sell" value="" hidden>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xxl-2"></div>
@@ -88,12 +90,24 @@
                         <?php
                             include "includes/functions/connection.php";
 
+                            if($sell_id == ""){
+                              $bike = "AND bike_product.STATUS = 'LISTED' OR bike_product.STATUS = 'RESERVED' ";
+                              $fashion = "AND fashion_product.STATUS = 'LISTED'OR fashion_product.STATUS = 'RESERVED' ";
+                            }
+                            else if($sell_id != $key || $key == ""){
+                              $bike = "AND bike_product.STATUS = 'LISTED' ";
+                              $fashion = "AND fashion_product.STATUS = 'LISTED' ";
+                            }else{
+                              $bike = "";
+                              $fashion = "";
+                            }
+
                             $sql = " (SELECT 
                             PRODUCT_NAME, PRODUCT_PRICE, product_img.IMG_NAME, user.USERNAME,user.PROFILE_PIC, bike_product.PROD_ID, bike_product.STATUS
                             FROM bike_product
                             JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
                             JOIN user ON bike_product.SELLER_ID=user.SESSION_KEY
-                            WHERE bike_product.SELLER_ID = '$session_id' AND product_img.IMG_INDEX = 0
+                            WHERE bike_product.SELLER_ID = '$session_id' AND product_img.IMG_INDEX = 0 ". $bike ."
                             )
                             UNION
                             (
@@ -102,7 +116,7 @@
                             FROM fashion_product
                             JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
                             JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
-                            WHERE fashion_product.SELLER_ID = '$session_id' AND fashion_imgs.IMG_INDEX = 0
+                            WHERE fashion_product.SELLER_ID = '$session_id' AND fashion_imgs.IMG_INDEX = 0 " . $fashion ."
                             );";
 
                           
@@ -129,8 +143,13 @@
                                           <a href=product.php?id=$prod_id><div class='edit_btn_product'>View</div></a>
                                           <a id='edit' href=Editlisting.php?id=$prod_id><div class='edit_btn_product ed'>Edit</div></a>
                                         </div>";
-                                }//<input type='submit' class='edit_btn_product' value='Edit'>
-                            }    
+                                }
+                            }else{
+                              echo" <div class='message'>
+                                      <img src='includes/images/header-background/undraw_empty_cart_co35.svg' class='img_message'>
+                                      <p class='message_txt'>@$username_u doesn't have any listings yet</p>
+                                    </div>";
+                            }  
                         ?>
                         <input type="text" value="<?php echo $i?>" id="countlist" class="dis">
                       </div>
@@ -138,10 +157,15 @@
 
                   <!--tab2 Review-->
                   <div class="review tab"  id="tab2" style="display:none">
+                    <div class="title-review" style="font-weight:300">Reviews for @<?=$username_u?></div>
                     <div class="container-review">
-                      <div class="title-review">Reviews for @<?=$username_u?></div>
                       <?php
-                        display_review($key,'2'); 
+                        if($sell_id == ""){
+                          display_review($key,'2',$username_u);
+                        }else{
+                          display_review($sell_id,'2',$username_u);
+                        }
+                        
                       ?>  
                     </div>
                   </div>

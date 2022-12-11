@@ -30,6 +30,16 @@ body{
     width: 100%;
 }
 
+.container-review{
+    height: 550px;
+
+}
+
+.container-review-box{
+    height: 550px;
+    overflow: auto;
+}
+
 .container-box-1{
     margin-bottom: 20px;
 }

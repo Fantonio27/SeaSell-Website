@@ -29,6 +29,7 @@
     <form action="<?php $_PHP_SELF?>" method="POST">
         <div class="container-fluid">
             <!--For Header-->
+            <input id="sell" value="" hidden>
             <input type="text" id="id" value="<?php echo $session_id?>" name="id" style="display:none">
             <div class="row"> 
                 <div class="col-xxl-1"></div>
@@ -102,7 +103,7 @@
                             <input type="submit" class="sort-item" name="High" value="Price High">
                             <input type="submit" class="sort-item" name="Low" value="Price Low">
                         </div>
-                        <div class="box-category">
+                        <div class="box-product-display">
                             <?php
                                 
                                 if(isset($_POST['relevant'])){

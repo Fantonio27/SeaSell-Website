@@ -135,6 +135,7 @@
                     </div>
                     <div class="info-name"><?=$seller_fname .' '. $seller_lname?>
                         <p class="info-username">@<?=$seller_user?></p>
+                        <input type="text" id="sell" value="<?=$seller_id?>" hidden>
 
                         <svg viewBox="0 0 1000 200" class='rating'>
                           <defs> 
@@ -154,15 +155,12 @@
                           <rect width="<?=$rate_perc?>%" class='rating__value' clip-path="url(#stars)"></rect>
                         </svg><br>
 
-                        <p class="review-text"><?=$rate_u?> rates</p>
+                        <p class="review-text"><?=$rate_round?></p>
                         <input type="text" value="<?=$seller_id?>" name="seller_id" hidden>
+                        <input type="submit" class="follow_btn" value="View Profile" id="view" name="view">
+                        <input type="submit" class="chat_btn" value="Chat" name="chat" id="chat1">
+                      
                         <?php
-                          seller_id();
-                        ?>
-                        <input type="submit" class="follow_btn" value="View Profile" name="view">
-                        <input type="submit" class="chat_btn" value="Chat" name="chat">
-                        <!--<a class="chat_btn" id="chat">Chat</a>-->
-                        <?
                           seller_id();
                         ?>
                     </div>
@@ -174,16 +172,12 @@
         <div class="col-xxl-5 col-xl-6 col-md-7">
           <div class="container-review">
               <div class="title-review">Reviews for @<?=$seller_user?></div>
-              <!-- use this if theres no review
-                <div class="review-box"> 
-                No reviews. Reviews are given when a buyer or seller completes a deal. Chat with the seller to find out more!
-              </div>-->
-              <?php
-                display_review($prod_no,'1'); 
-              ?>
-              
-          </div>
-          
+              <div class="container-review-box">
+                <?php
+                  display_review($prod_no,'1',$seller_user); 
+                ?>
+              </div>
+          </div>   
         </div>
         
         <div class="col-xxl-2 col-xl-1"></div>

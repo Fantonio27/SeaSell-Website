@@ -177,14 +177,16 @@ hr{
 }
 
 .container-productbox{
-    margin-top: 20px;
-    padding: 0px 50px;
+    margin: 20px auto;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 15px ;
     flex-direction: row;
-    align-items: center;
+    max-height: 1000px;
+    overflow: auto;
+    width: 93%;
+    padding: 10px 0px;
 }
 
 .box-product{

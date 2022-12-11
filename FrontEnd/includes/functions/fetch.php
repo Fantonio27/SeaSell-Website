@@ -27,7 +27,7 @@
         //$username1= $row['USERNAME'];
         }
     }else{
-        //echo "no session key";
+        $key= "";
     }
     
     //for the product no
@@ -77,7 +77,8 @@
             $product_desc= $row['PRODUCT_DESCRIPTION'];
             $product_type= $row['PRODUCT_TYPE'];
             $DATE = $row['DATE'];
-            //$product_status = $row['STATUS'];
+            $product_status = $row['STATUS'];
+
             $product_deal = $row['PRODUCT_DEALMETHOD'];
             $product_meet= $row['MEET_UP'];
             $product_mail = $row['MAILING'];
@@ -90,10 +91,21 @@
             $seller_lname= $row['LASTNAME'];
             $seller_user= $row['USERNAME'];
             $seller_pic= $row['PROFILE_PIC'];
+            $rates = $row['RATING'];
 
-            $rate_u= $row['RATING'];
-            $rate_u = round($rate_u,1);
-            $rate_perc = $rate_u * 20;
+            if($product_status == "LISTED"){
+                $product_status = "Reserved";
+            }else if ($product_status == "RESERVED"){
+                $product_status = "Unreserved";
+            }
+
+            if($rates != ""){
+                $rate_round = round($rates,1) . " rates";
+                $rate_perc =  0 * 20;
+            }else{
+                $rate_round = "No ratings yet";
+                $rate_perc =  0 * 20;
+            }
             
             $cat = "Bike"; 
             $_SESSION['prodno'] = $prod_no;
@@ -119,30 +131,43 @@
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
     
-            $product_name= $row['PRODUCT_NAME'];
-            $product_prc= $row['PRODUCT_PRICE'];
-            $product_con = $row['PRODUCT_CONDITION'];
-            $product_desc= $row['PRODUCT_DESCRIPTION'];
-            $product_type= $row['PRODUCT_TYPE'];
-            $product_gender= $row['PRODUCT_GENDER'];
-            $DATE = $row['DATE'];
-            $product_size= $row['PRODUCT_SIZE'];
-            //$product_status = $row['STATUS'];
-            $product_deal = $row['PRODUCT_DEALMETHOD'];
-            $product_meet= $row['MEET_UP'];
-            $product_mail = $row['MAILING'];
-            $product_qty = $row['PRODUCT_QTY'];
+                $product_name= $row['PRODUCT_NAME'];
+                $product_prc= $row['PRODUCT_PRICE'];
+                $product_con = $row['PRODUCT_CONDITION'];
+                $product_desc= $row['PRODUCT_DESCRIPTION'];
+                $product_type= $row['PRODUCT_TYPE'];
+                $product_gender= $row['PRODUCT_GENDER'];
+                $DATE = $row['DATE'];
+                $product_size= $row['PRODUCT_SIZE'];
+                $product_status = $row['STATUS'];
+                $product_deal = $row['PRODUCT_DEALMETHOD'];
+                $product_meet= $row['MEET_UP'];
+                $product_mail = $row['MAILING'];
+                $product_qty = $row['PRODUCT_QTY'];
 
-            $picture_id= $row['PICTURE_ID'];
-            $prod_id= $row['PROD_ID'];
-            $img_name= $row['IMG_NAME'];
-            $seller_id= $row['SELLER_ID'];
-            $seller_fname= $row['FIRSTNAME'];
-            $seller_lname= $row['LASTNAME'];
-            $seller_user= $row['USERNAME'];
-            $seller_pic= $row['PROFILE_PIC'];
-            $cat = "Fashion"; 
-            
+                $picture_id= $row['PICTURE_ID'];
+                $prod_id= $row['PROD_ID'];
+                $img_name= $row['IMG_NAME'];
+                $seller_id= $row['SELLER_ID'];
+                $seller_fname= $row['FIRSTNAME'];
+                $seller_lname= $row['LASTNAME'];
+                $seller_user= $row['USERNAME'];
+                $seller_pic= $row['PROFILE_PIC'];
+                $cat = "Fashion"; 
+                $rates = $row['RATING'];
+
+                if($product_status == "LISTED"){
+                    $product_status = "Reserved";
+                }else if ($product_status == "RESERVED"){
+                    $product_status = "Unreserved";
+                }
+                if($rates != ""){
+                    $rate_round = round($rates,1) . " rates";
+                    $rate_perc =  0 * 20;
+                }else{
+                    $rate_round = "No ratings yet";
+                    $rate_perc =  0 * 20;
+                }
             }
         }else{
             //echo "no session key";

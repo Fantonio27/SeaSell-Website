@@ -45,7 +45,7 @@
                 <div class="container-box">
                     <form action="<?php $_PHP_SELF?>" method="POST">
                         <!--Holder-->
-
+                        <input id="sell" value="" hidden>
                         <input type="text" name= "forname" id="forname" value="<?=$name?>" >
                         <input type="text" id="fortype" value="<?=$type?>" >
                         <input type="text" id="forcondition" value="<?=$condition?>" >

@@ -732,6 +732,26 @@ function typechange1(a,b){
     }
 }
 
+function change_reserve(){
+	var res = document.getElementById("reserved");
+	var p1 = document.getElementById("p1");
+	var p2 = document.getElementById("p2");
+	var res_btn = document.getElementById("res");
+	var unres_btn = document.getElementById("unres");
+
+	if(res.textContent == "Mark as Reserved"){
+		p1.style.display="block";
+		p2.style.display="none";
+		res_btn.style.display="block";
+		unres_btn.style.display="none";
+	}else{
+		p1.style.display="none";
+		p2.style.display="block";
+		res_btn.style.display="none";
+		unres_btn.style.display="block";
+	}
+}
+
 
 
 

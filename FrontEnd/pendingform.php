@@ -27,6 +27,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="container-box1">
+                    <input id="sell" value="" hidden>
                     <img src="includes/images/header-background/undraw_to_do_re_jaef.svg">
                     <h1>PENDING LIST</h1>
                     <p>Thank you for choosing Seasell as your online shopping platform! 
