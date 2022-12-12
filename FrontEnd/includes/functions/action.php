@@ -163,7 +163,7 @@
             $ex = pathinfo($profile, PATHINFO_EXTENSION);
             $profile_name = $username . "." . $ex;
             $session_key = $_POST['id'];
-            echo$session_key;
+            echo"<script>alert($profile_name)</script>";
             /*echo  $profile;
             echo  $username;
             echo  $firstname;

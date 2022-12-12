@@ -179,7 +179,7 @@
                       <img src="includes/images/Profile-pic/<?php echo $profile_pic_u?>" class="user-pic-profile">
                       <div>Clear frontal face photos are an important way for buyers and sellers to learn about each other.<br>
                         <input type="file" value="Upload a photo" name='file[]' id='file' class="input">   
-                        <input type="text" name="profile_up" id="profile-txt" value="<?php echo $profile_pic_u?>" class="" hidden>                
+                        <input type="text" name="profile_up" id="profile-txt" value="<?php echo $profile_pic_u?>">                
                       </div>
                     </div>
 
