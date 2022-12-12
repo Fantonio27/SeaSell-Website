@@ -67,6 +67,11 @@
                         <span class="sidebar--item">View Record</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../../index.php">
+                        <span class="sidebar--item">Log out</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="main--content">

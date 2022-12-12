@@ -81,6 +81,13 @@
                     </a>
                 </li>
             </ul>
+            <ul class="sidebar--bottom-items">
+                <li>
+                    <a href="../index.php">
+                        <span class="sidebar--item">Log out</span>
+                    </a>
+                </li>
+            </ul>
         </div>
         <div class="main--content">
             <div class="overview">
