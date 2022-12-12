@@ -1,0 +1,171 @@
+html,
+body {
+    display: flex;
+    flex-flow: column;
+    flex-shrink: 1;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+div#messenger-body {
+    height: calc(100% - 96px);
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+div#messenger-body * {
+    display: flex;
+}
+
+div#messenger-body>div#messenger-sidebar {
+    flex-grow: 1;
+    flex-direction: column;
+    box-shadow: inset -6px 0px 6px -2px rgba(0, 0, 0, 0.25);
+}
+
+div#messenger-body>div#messenger-main {
+    flex-grow: 5;
+    flex-direction: column;
+}
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-header {
+    display: flex;
+    height: 80px;
+    font-size: xx-large;
+    justify-content: flex-start;
+    align-items: flex-end;
+    box-shadow: inset 0px 6px 6px -2px rgba(0, 0, 0, 0.25), inset 0px -2px 6px -2px rgba(0, 0, 0, 0.25);
+}
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-inbox {
+    display: block;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-offer-block {
+    display: flex;
+    height: 160px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    flex-direction: row;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-history {
+    display: flex;
+    flex-flow: column-reverse;
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-offer-block>picture#messenger-item-preview {
+    max-width: 25%;
+    margin-right: 10px;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-offer-block>div#messenger-item-summary {
+    flex-grow: 6;
+    flex-direction: column;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-offer-block>div#messenger-offer-controls {
+    flex-grow: 2;
+    justify-content: flex-end;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-input {
+    height: 40px;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-input>button#message-input-subbtn {
+    height: 40px;
+    width: 40px;
+}
+
+div#messenger-body>div#messenger-main>div#messenger-input>input#message-input-txtbox {
+    width: 100%;
+    flex-grow: 1;
+}
+
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-inbox>div.inbox_item {
+    height: 150px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-inbox>div.inbox_item#active_inbox {
+    background-color: lightgray;
+    cursor: default;
+}
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-inbox>div.inbox_item>picture {
+    width: 25%;
+}
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-inbox>div.inbox_item>div {
+    flex-direction: column;
+    width: 100%;
+}
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-inbox>div.inbox_item>div>h5 {
+    color: dimgray;
+}
+
+div#messenger-body>div#messenger-sidebar>div#messenger-sidebar-inbox>div.inbox_item>div>h6 {
+    color: darkgray;
+}
+
+div#messenger-history>div.msg {
+    flex-flow: column;
+}
+
+div#messenger-history>div.msg.incoming {
+    align-self: flex-start;
+}
+
+div#messenger-history>div.msg.incoming>p.content, div#messenger-history>div.msg.incoming>h3 {
+    padding: 5px 10px;
+    border-radius: 30px;
+    background-color: lightgray;
+}
+
+div#messenger-history>div.msg.incoming>p.content, div#messenger-history>div.msg.outgoing>h3 {
+    padding: 5px 10px;
+    border-radius: 30px;
+    background-color:  #0099ff;
+}
+
+div#messenger-history>div.msg.incoming>p.content {
+    background-color: lightgray;
+}
+
+div#messenger-history>div.msg.outgoing {
+    align-self: flex-end;
+}
+
+
+
+div#messenger-history>div.msg>p.date {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+div#messenger-history>div.msg.outgoing>p.content {
+    background-color: #0099ff;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+div#messenger-history>div.msg>p {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1px;
+}

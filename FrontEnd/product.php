@@ -23,7 +23,7 @@
 <body onload="changeprod()">
   <form action="<?php $_PHP_SELF?>" method="POST">
     <div class="container-fluid">
-      <input type="text" id="id" value="<?php echo $prod_no?>" name="id" hidden>
+      <input type="text" id="id" value="<?php echo $prod_no?>" name="itemid" hidden>
       <input type="text" id="cat" value="<?php echo $cat?>" hidden>
       <p id="count" hidden><?=$indexcount?></p>
       <div class="row c2"></div>
