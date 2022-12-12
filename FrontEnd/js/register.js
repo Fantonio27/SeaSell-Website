@@ -153,9 +153,9 @@ function validation(a){ //validation text
         if (mobile_no.value.length === 0){
             key6 = 0;
             valid6.innerHTML ='Mobile number is required';
-        }else if (mobile_no.value.length < 10){
+        }else if (mobile_no.value.length < 11){
             key6 = 0;
-            valid6.innerHTML ='Mobile number must be at least 10 numbers';  
+            valid6.innerHTML ='Mobile number must be at least 11 numbers';  
         }else{
             key6 = 1;
             valid6.style.color = "white";

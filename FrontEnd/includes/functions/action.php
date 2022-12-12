@@ -163,7 +163,7 @@
             $ex = pathinfo($profile, PATHINFO_EXTENSION);
             $profile_name = $username . "." . $ex;
             $session_key = $_POST['id'];
-            echo"<script>alert($profile_name)</script>";
+            //echo"<script>alert($profile_name)</script>";
             /*echo  $profile;
             echo  $username;
             echo  $firstname;
@@ -181,16 +181,21 @@
             WHERE SESSION_KEY = '$session_key'";
             
             if ($conn->query($sql) === TRUE) { 
-                $uploads_dir = 'includes/images/Profile-pic';
-                foreach ($_FILES["file"]["error"] as $key => $error) {
-                if ($error == UPLOAD_ERR_OK) {
-                    $tmp_name = $_FILES["file"]["tmp_name"][$key];
-
-                    $name = basename($_FILES["file"]["name"][$key]);
-                    move_uploaded_file($tmp_name, "$uploads_dir/$name");
-
-                    rename("includes/images/Profile-pic/$name", "includes/images/Profile-pic/$profile_name");
+                if($profile != "user.png"){
+                    $uploads_dir = 'includes/images/Profile-pic';
+                    foreach ($_FILES["file"]["error"] as $key => $error) {
+                    if ($error == UPLOAD_ERR_OK) {
+                        $tmp_name = $_FILES["file"]["tmp_name"][$key];
+    
+                        $name = basename($_FILES["file"]["name"][$key]);
+                        move_uploaded_file($tmp_name, "$uploads_dir/$name");
+    
+                        rename("includes/images/Profile-pic/$name", "includes/images/Profile-pic/$profile_name");
+                        }
                     }
+                }else{
+                    $sql = "UPDATE user SET PROFILE_PIC = 'user.png' WHERE SESSION_KEY = '$session_key'";
+                    $result = $conn->query($sql);
                 }
             }else{
                 
@@ -641,12 +646,13 @@
             if ($conn->query($sql) === TRUE) { 
                 $sql = "SELECT * FROM user WHERE SESSION_KEY = '$SELLER_ID'";
                 $result = mysqli_query($conn,$sql);
-            
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         $RATING = $row['RATING'];
                     }
-
+                    if($RATING == ""){
+                        $RATING = 0;
+                    }
                     $newrate = ($RATING + $RATE)/2;
                     $newrate = round($newrate, 2);
 

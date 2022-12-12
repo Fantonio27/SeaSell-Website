@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SeaSell - Message</title>
-    <link rel="icon" type="image/x-icon" href="includes/images/Logo/icon-logo.png">
+    
     <link rel="stylesheet" href="includes/css-bootstrap/bootstrap.min.css">
     <script type="text/javascript" src="includes/js/bootstrap.bundle.js"></script>
 </head>
@@ -29,12 +29,12 @@
     <div class="container-fluid">
         <form action="<?php $_PHP_SELF?>" method="POST">
             <input id="sell" value="" hidden>
-            <input type="text" value="<?= $session_id?>" name="buyer"> <!--USER/BUYER/SELLER-->
-            <input type="text" value="<?=$seller?>" name="seller"><!--EXAMPLE SELLER ID-->
-            <input type="text" value="<?=$prod?>" name="prod"><!--EXAMPLE PROD_ID-->
+            <input type="text" value="<?= $session_id?>" name="buyer" > <!--USER/BUYER/SELLER-->
+            <input type="text" value="<?=$seller?>" name="seller" ><!--EXAMPLE SELLER ID-->
+            <input type="text" value="<?=$prod?>" name="prod" ><!--EXAMPLE PROD_ID-->
 
-            <input type="text" name="time" id="time">
-            <input type="text" name="date" id="date">
+            <input type="text" name="time" id="time" hidden>
+            <input type="text" name="date" id="date" hidden>
 
             <button type="button" class=" res_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
                 Leave a Review

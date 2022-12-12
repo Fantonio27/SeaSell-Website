@@ -36,9 +36,9 @@ function onChange(a){	//for 2 category
 		document.getElementById("con-1").style.display = "none";
 
 		productname_f.value = "";
-		changecon1('s');
+		changecon1('pw');
 		document.getElementById("con_txt_fashion").value = "";
-		changepric1('s','s');
+		changepric1('pw','pw');
 		prcinput_f.value = "";
 		desc_f.value = "";
 		type_f.selectedIndex = "0";
@@ -66,9 +66,9 @@ function onChange(a){	//for 2 category
 		document.getElementById("con-1").style.display = "block";
 
 		productname.value = "";
-		changecon('s');
+		changecon('pw');
 		document.getElementById("con_txt_bike").value = "";
-		changepric('s','s');
+		changepric('pw','pw');
 		prcinput.value = "";
 		desc_b.value = "";
 		type.selectedIndex = "0";

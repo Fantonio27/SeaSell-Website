@@ -16,7 +16,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SeaSell</title>
-    <link rel="icon" type="image/x-icon" href="includes/images/Logo/icon-logo.png">
     <link rel="stylesheet" href="includes/css-bootstrap/bootstrap.min.css">
     <script type="text/javascript" src="includes/js/bootstrap.bundle.js"></script>
 </head>
@@ -82,7 +81,7 @@
                             </div>
                             <div class="box-cat-1" onclick="nextpage('Bikeform.php')">
                                 <img src="includes/images/icon/car.png" class="icon-cat">
-                                <p class="text-cal">Fashion</p>
+                                <p class="text-cal">Cars</p>
                             </div>
                             <div class="box-cat-1" onclick="nextpage('Errorpage.php')">
                                 <img src="includes/images/icon/home.png" class="icon-cat">

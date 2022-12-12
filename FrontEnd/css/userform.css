@@ -244,15 +244,17 @@ hr{
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    margin:15px 0px 10px;
+    margin:15px 30px 10px 0px;
+    float: left;
+
 }
 
 .smtitle-txt-profile div{
-    width: 500px;
-    padding: 40px 15px;
-    float: right;
+    width: 600px;
+    height: 150px;
+    padding: 50px 15px;
     font-size: 13px;
-    font-weight: normal;    
+    font-weight: normal; 
 }
 
 .input{
