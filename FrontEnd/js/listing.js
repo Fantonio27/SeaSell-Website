@@ -34,10 +34,56 @@ function onChange(a){	//for 2 category
 	if(a == 1){		//Bike
 		document.getElementById("con-2").style.display = "block";
 		document.getElementById("con-1").style.display = "none";
+
+		productname_f.value = "";
+		changecon1('s');
+		document.getElementById("con_txt_fashion").value = "";
+		changepric1('s','s');
+		prcinput_f.value = "";
+		desc_f.value = "";
+		type_f.selectedIndex = "0";
+		gender_f.disabled = true;
+		size_f.disabled = true;
+		gender_f.selectedIndex = "0";
+		size_f.selectedIndex = "0";
+		document.getElementById("qty_fashion").checked = false;
+		document.getElementById("qty_txt_fashion").value = "ONE";
+		meet_f.checked = false;
+		mail_f.checked = false;
+		mail_txt_f.value = "";
+		add_f.value = "";
+		document.getElementById("deal1_fashion").value = "";
+		document.getElementById("deal2_fashion").value = "";
+		document.getElementById("file_fashion").value="";
+		val7_f.style.display="none";
+		val8_f.style.display="none";
+
+		key1_f = key2_f = key3_f = key4_f = key5_f = key6_f = key7_f = key8_f = key9_f = 0 ;
+		validation2();
 		
 	}else if (a == 2){		//Fashion
 		document.getElementById("con-2").style.display = "none";
 		document.getElementById("con-1").style.display = "block";
+
+		productname.value = "";
+		changecon('s');
+		document.getElementById("con_txt_bike").value = "";
+		changepric('s','s');
+		prcinput.value = "";
+		desc_b.value = "";
+		type.selectedIndex = "0";
+		document.getElementById("qty_bike").checked = false;
+		document.getElementById("qty_txt_bike").value = "ONE";
+		meet.checked = false;
+		mail.checked = false;
+		mail_txt.value = "";
+		add.value = "";
+		document.getElementById("deal1_bike").value = "";
+		document.getElementById("deal2_bike").value = "";
+		document.getElementById("file_bike").value="";
+
+		key1 = key2 = key3 = key4 = key5 = key6 = key7 = 0 ;
+		validation1();
 	}
 }
 

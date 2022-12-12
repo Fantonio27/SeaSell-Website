@@ -231,7 +231,7 @@
                       <p class="smtxt-per-item">With these details, buyers can find your listing more easily and ask fewer questions.</p> 
                       <input type="checkbox"  class="form-check-input deal-check" id="qty_bike" onclick="qtychange()">
                       <p class="smtxt-per-item">I have more than one of the same item</p> 
-                      <input type="text" id="qty_txt_bike" value="ONE" name="qty" class="dis">
+                      <input type="text" id="qty_txt_bike" value="ONE" name="qty" hidden>
 
                       <p class="title-item">Deal Method<span class="red"> *</span></p>
 
@@ -253,8 +253,8 @@
                         <span id="req6_bike">Please choose a deal method</span>
                       </div>
 
-                      <input type="text" id="deal1_bike" name="deal1" class="dis">
-                      <input type="text" id="deal2_bike" name="deal2" class="dis">
+                      <input type="text" id="deal1_bike" name="deal1" hidden>
+                      <input type="text" id="deal2_bike" name="deal2" hidden>
                       <p class="title-item">Picture of the product<span class="red"> *</span></p>
                       <?php 
                           bike_upload();

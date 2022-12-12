@@ -119,7 +119,8 @@
 					move_uploaded_file($_FILES['file_f']['tmp_name'][$i], 'includes/images/client-product/'.$fileName);
 					rename("includes/images/client-product/$fileName", "includes/images/client-product/$pic_name");
 					echo'<script>
-						window.location.href ="pendingform.php";	
+						window.location.href ="pendingform.php";
+						alert("Listing Successful!"); 		
 						</script>';
 				}
 			}else{
