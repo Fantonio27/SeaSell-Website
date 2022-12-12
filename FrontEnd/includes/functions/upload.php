@@ -51,7 +51,7 @@
 					move_uploaded_file($_FILES['file']['tmp_name'][$i], 'includes/images/client-product/'.$fileName);
 					rename("includes/images/client-product/$fileName", "includes/images/client-product/$pic_name");
 					echo'<script>
-						window.location.href ="index.php";
+						window.location.href ="pendingform.php";
 						alert("Listing Successful!"); 	
 						</script>';
 				}
@@ -81,9 +81,9 @@
 			$SELLER_F = $_POST['id_f'];
 			$PICTUREID_F = $_POST['picid_fashion'];		
 			$STATUS_F = "PENDING";
-			$DATE_F = $POST['text-time'];
-			/*
-			echo $SELLER_F;
+			$DATE_F = $_POST['text-time'];
+			
+			/*echo $SELLER_F;
 			echo $PRODID_F;
 			echo $PROD_NAME_F;
 			echo $CONDITION_F;
@@ -98,7 +98,6 @@
 			echo $MAIL_F;		
 			echo $PICTUREID_F;
 			*/
-			
 			$sql = "INSERT INTO fashion_product ". "(PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_CONDITION, PRODUCT_DESCRIPTION, PRODUCT_TYPE,PRODUCT_GENDER,PRODUCT_SIZE, PRODUCT_QTY, PRODUCT_DEALMETHOD, MEET_UP, MAILING, PICTURE_ID, SELLER_ID, PROD_ID, STATUS, DATE) ". 
 			"VALUES('$PROD_NAME_F','$PRICE_F','$CONDITION_F','$DESC_F','$TYPE_F','$GENDER_F','$SIZE_F','$QTY_ITEM_F','$DEAL_F','$MEET_F','$MAIL_F', '$PICTUREID_F', '$SELLER_F', '$PRODID_F','$STATUS_F', $DATE_F)";
 			

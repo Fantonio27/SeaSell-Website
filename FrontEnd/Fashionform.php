@@ -3,12 +3,6 @@
     session_start();
     $session_id = $_SESSION['id'];
     $_SESSION['seller_id'] = "";
-    $_SESSION['name'] = "";
-    $_SESSION['type'] = "";
-    $_SESSION['condition'] ="";
-    $_SESSION['price'] = "";
-    $_SESSION['deal'] = "";
-    $_SESSION['cat'] = "";
     $_GET['id'] = 0;
     include"php/navbar.php";
 ?>
@@ -94,7 +88,7 @@
         
                                 <div class="container-smbox">Deal Option<br>
                                     <select name="deal" id="deal" class="text-box cursor">
-                                        <option value=" ">Any</option>
+                                        <option value="">Any</option>
                                         <option value="Meet-up">Meet-up</option>
                                         <option value=" Mailing & Delivery">Mailing & Delivery</option>
                                     </select>
@@ -173,6 +167,8 @@
             <div class="row c3"></div>
 
             <div class="row">
+                <input type="submit" class="follow_btn" value="View Profile" id="view" name="view" hidden>
+                <input type="submit" class="chat_btn" value="Chat" name="chat" id="chat1" hidden>
                 <?php
                     include"php/footer.php";
                 ?>

@@ -36,7 +36,10 @@
                     <a href="index.php"><div>Done</div></a>
                 </img>
             </div>
-            <div class="col-2"></div>
+            <div class="col-2">
+                <input type="submit" class="follow_btn" value="View Profile" id="view" name="view" hidden>
+                <input type="submit" class="chat_btn" value="Chat" name="chat" id="chat1" hidden>
+            </div>
         </div>
     </div>
 </body>

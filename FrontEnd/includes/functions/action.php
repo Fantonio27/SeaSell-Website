@@ -228,7 +228,7 @@
     function logout(){   //LOG OUT
 
         if(isset($_POST['log_out'])){
-            $_SESSION['id'] = " ";
+            $_SESSION['id'] = "";
 
             include"fetch.php";
             echo"<script>window.location.href='index.php'</script>";
@@ -402,12 +402,12 @@
 
         if(isset($_POST['reset'])){
 
-            $email_add = $email;
+            $email_add = $_SESSION['email'];;
             $newpass = $_POST['password'];
             $confpass = $_POST['confpass'];
             if($newpass == $confpass){
                 $sql = "UPDATE user SET PASSWORD = '$newpass' WHERE EMAIL_ADDRESS = '$email_add'";
-
+                echo $sql;
                 if ($conn->query($sql) === TRUE) { 
                     echo"<script>alert('Success! Your password has been changed!');
                     window.location.href='login.php'</script>";
@@ -524,11 +524,11 @@
             $sql .= " AND PRODUCT_DEALMETHOD = '" . $deal . "'";
         }
         
-        filter_product($sql,$cat);
+        filter_product($sql,$cat,$name);
     }
         
 
-    function filter_product($a, $b){    //FILTER IN SEARCHFORM
+    function filter_product($a, $b,$c){    //FILTER IN SEARCHFORM
         include "connection.php";
 
         if($b == "Bike"){
@@ -568,9 +568,27 @@
             JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
             WHERE fashion_imgs.IMG_INDEX = 0  AND fashion_product.STATUS = 'LISTED'". $a ."
             ) ORDER BY DATE DESC;";
+        }else{
 
-            //echo $sql;
-        } 
+            $sql = " (SELECT 
+            PRODUCT_NAME, PRODUCT_PRICE, product_img.IMG_NAME, user.USERNAME,user.PROFILE_PIC, bike_product.PROD_ID, bike_product.DATE
+            FROM bike_product
+            JOIN product_img ON bike_product.PROD_ID=product_img.PROD_ID
+            JOIN user ON bike_product.SELLER_ID=user.SESSION_KEY
+            WHERE product_img.IMG_INDEX = 0 AND bike_product.STATUS = 'LISTED' AND bike_product.PRODUCT_NAME = '". $c ."'
+            )
+            UNION
+            (
+            SELECT 
+                PRODUCT_NAME, PRODUCT_PRICE,fashion_imgs.IMG_NAME, user.USERNAME,user.PROFILE_PIC, fashion_product.PROD_ID, fashion_product.DATE
+            FROM fashion_product
+            JOIN fashion_imgs ON fashion_product.PROD_ID=fashion_imgs.PROD_ID
+            JOIN user ON fashion_product.SELLER_ID=user.SESSION_KEY
+            WHERE fashion_imgs.IMG_INDEX = 0  AND fashion_product.STATUS = 'LISTED' AND fashion_product.PRODUCT_NAME = '". $c ."'
+            ) ORDER BY DATE DESC;";
+
+            //echo$sql;
+        }
 
         $result = mysqli_query($conn,$sql);
         $i = 0;

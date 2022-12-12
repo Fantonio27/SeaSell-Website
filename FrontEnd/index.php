@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['id'];
     $session_id = $_SESSION['id'];
     $_SESSION['seller_id'] = "";
     $_GET['id'] = 0;
@@ -30,7 +31,7 @@
         <div class="container-fluid">
             <!--For Header-->
             <input id="sell" value="" hidden>
-            <input type="text" id="id" value="<?php echo $session_id?>" name="id" style="display:none">
+            <input type="text" id="id" value="<?php echo $session_id?>" name="id" hidden>
             <div class="row"> 
                 <div class="col-xxl-1"></div>
                 <div class="col-xxl-10">
@@ -45,6 +46,15 @@
                                     <?php
                                         if(isset($_POST['search'])){
                                             $_SESSION['name'] = $_POST['search_txt'];
+                                            $_SESSION['type'] = "";
+                                            if ($_POST['search_txt'] == ""){
+                                                $_SESSION['cat'] = "Category";
+                                            }else{
+                                                $_SESSION['cat'] = "";
+                                            }   
+                                            $_SESSION['deal'] = "";
+                                            $_SESSION['price'] = "";
+                                            $_SESSION['condition'] = "";
                                             echo"<script>window.location.href='searchform.php'</script>";
                                         }
                                     ?>
@@ -95,6 +105,8 @@
             <div class="row">
                 <div class="col-xxl-1"></div>
                 <div class="col-xxl-10">
+                    <input type="submit" class="follow_btn" value="View Profile" id="view" name="view" hidden>
+                    <input type="submit" class="chat_btn" value="Chat" name="chat" id="chat1" hidden>
                     <div class="container-body-box">
                         <h3 class="body-text1">Recommended for you</h3>
                         <div class="sort-box">

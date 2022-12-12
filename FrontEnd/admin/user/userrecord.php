@@ -34,7 +34,7 @@
                         <span class="sidebar--item">Fashion</span>
                     </a>
                 </li>
-                   <li>
+                <li>
                     <a href="../bike/productbike.php">
                         <span class="icon icon-2"><i class="ri-product-hunt-line"></i></span>
                         <span class="sidebar--item">Bike</span>
@@ -92,9 +92,7 @@
  <th>Mobile Number</th>
  <th>Gender</th>
  <th>Birth date</th>
- <th>Profile</th>
  <th>Session Key</th>
- <th>Joined Date</th>
  </tr>
 </thead>
 <tbody>
@@ -123,9 +121,7 @@
         <td>$row[MOBILE_NUMBER]</td>
         <td>$row[GENDER]</td>
         <td>$row[BIRTHDAY]</td>
-        <td>$row[PROFILE_PIC]</td>
         <td>$row[SESSION_KEY]</td>
-        <td>$row[JOINED_DATE]</td>
         </tr>
         ";
     }

@@ -57,24 +57,24 @@
                                 <div class="container-smbox">Type<br>
                                     <select name="type" id="type" class="text-box cursor">
                                         <option value="">Any</option>
-                                        <option value="">Mountain Bike</option>
-                                        <option value="">Road Bikes</option>
-                                        <option value="">Foldable Bikes</option>
-                                        <option value="">E-Bikes</option>
-                                        <option value="">Parts & Accessories</option>
-                                        <option value="">Children Bikes</option>
-                                        <option value="">Other Bicycles</option>
+                                        <option value="Mountain Bike">Mountain Bike</option>
+                                        <option value="Road Bikes">Road Bikes</option>
+                                        <option value="Foldable Bikes">Foldable Bikes</option>
+                                        <option value="E-Bikes">E-Bikes</option>
+                                        <option value="Parts & Accessories">Parts & Accessories</option>
+                                        <option value="Children Bikes">Children Bikes</option>
+                                        <option value="Other Bicycles">Other Bicycles</option>
                                     </select>
                                 </div>
         
                                 <div class="container-smbox">Condition<br>
                                     <select name="condition" id="condition" class="text-box cursor" style="padding-right: 30px;">
                                         <option value="">Any</option>
-                                        <option value="">Brand new</option>
-                                        <option value="">Like new</option>
-                                        <option value="">Lightly used</option>
-                                        <option value="">Well used</option>
-                                        <option value="">Heavily used</option>
+                                        <option value="Brand new">Brand new</option>
+                                        <option value="Like new">Like new</option>
+                                        <option value="Lightly used">Lightly used</option>
+                                        <option value="Well used">Well used</option>
+                                        <option value="Heavily used">Heavily used</option>
                                     </select>
                                 </div>
                             
@@ -82,16 +82,16 @@
                                 <div class="container-smbox">Price<br>
                                     <select name="price" id="price" class="text-box cursor">
                                         <option value="">Any</option>
-                                        <option value="">For Sale</option>
-                                        <option value="">For Free</option>
+                                        <option value="1">For Sale</option>
+                                        <option value="0">For Free</option>
                                     </select>
                                 </div>
         
                                 <div class="container-smbox">Deal Option<br>
                                     <select name="deal" id="deal" class="text-box cursor">
                                         <option value="">Any</option>
-                                        <option value="">Meet-up</option>
-                                        <option value="">Mailing & Delivery</option>
+                                        <option value="Meet-up">Meet-up</option>
+                                        <option value="Meet-up">Mailing & Delivery</option>
                                     </select>
                                 </div>
 
@@ -100,8 +100,8 @@
                                     <?php
                                         if(isset($_POST['search'])){
                                             $_SESSION['name'] = $_POST['name_txt'];
-                                            $_SESSION['type'] =$_POST['type'];
-                                            $_SESSION['condition'] =$_POST['condition'];
+                                            $_SESSION['type'] = $_POST['type'];
+                                            $_SESSION['condition'] = $_POST['condition'];
                                             $_SESSION['price'] = $_POST['price'];
                                             $_SESSION['deal'] = $_POST['deal'];
                                             $_SESSION['cat'] = "Bike";
@@ -168,6 +168,8 @@
             <div class="row c3"></div>
 
             <div class="row">
+                <input type="submit" class="follow_btn" value="View Profile" id="view" name="view" hidden>
+                <input type="submit" class="chat_btn" value="Chat" name="chat" id="chat1" hidden>
                 <?php
                     include"php/footer.php";
                 ?>

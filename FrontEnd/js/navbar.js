@@ -4,7 +4,7 @@ function changeuser(){
     const id = document.getElementById("id");
     const seller = document.getElementById("sell");
 
-    if(id.value == " "){
+    if(id.value == ""){
         document.getElementById("3").style.display = "block";
         document.getElementById("4").style.display = "block";
         document.getElementById("1").style.display = "none";

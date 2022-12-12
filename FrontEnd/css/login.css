@@ -178,9 +178,6 @@ a{
 /*xxl screen*/
 @media screen and (max-width: 1700px){
 
-    body{
-        background-color: lightcoral;
-    }
 
     .box{
         width: 85%;
@@ -202,10 +199,6 @@ a{
 }
 
 @media screen and (max-width: 1550px){
-
-    body{
-        background-color: lightseagreen;
-    }
 
     .container-box{
         width: 100%;
